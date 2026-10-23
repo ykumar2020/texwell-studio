@@ -1,0 +1,2856 @@
+{
+  "version": 1,
+  "bytes": 6942516,
+  "files": [
+    {
+      "name": "alltt.sty",
+      "offset": 0,
+      "length": 3137
+    },
+    {
+      "name": "amsbsy.sty",
+      "offset": 3137,
+      "length": 2222
+    },
+    {
+      "name": "amscd.sty",
+      "offset": 5359,
+      "length": 5321
+    },
+    {
+      "name": "amsfonts.sty",
+      "offset": 10680,
+      "length": 5949
+    },
+    {
+      "name": "amsgen.sty",
+      "offset": 16629,
+      "length": 4173
+    },
+    {
+      "name": "amsmath-2018-12-01.sty",
+      "offset": 20802,
+      "length": 85567
+    },
+    {
+      "name": "amsmath.sty",
+      "offset": 106369,
+      "length": 85567
+    },
+    {
+      "name": "amsopn.sty",
+      "offset": 191936,
+      "length": 4474
+    },
+    {
+      "name": "amssym.def",
+      "offset": 196410,
+      "length": 3491
+    },
+    {
+      "name": "amssymb.sty",
+      "offset": 199901,
+      "length": 13829
+    },
+    {
+      "name": "amstex.sty",
+      "offset": 213730,
+      "length": 69732
+    },
+    {
+      "name": "amstext.sty",
+      "offset": 283462,
+      "length": 2444
+    },
+    {
+      "name": "amsxtra.sty",
+      "offset": 285906,
+      "length": 2042
+    },
+    {
+      "name": "ansinew.def",
+      "offset": 287948,
+      "length": 6829
+    },
+    {
+      "name": "applemac.def",
+      "offset": 294777,
+      "length": 6404
+    },
+    {
+      "name": "article.cls",
+      "offset": 301181,
+      "length": 20144
+    },
+    {
+      "name": "article.sty",
+      "offset": 321325,
+      "length": 1740
+    },
+    {
+      "name": "ascii.def",
+      "offset": 323065,
+      "length": 1731
+    },
+    {
+      "name": "atbegshi-ltx.sty",
+      "offset": 324796,
+      "length": 2963
+    },
+    {
+      "name": "atveryend-ltx.sty",
+      "offset": 327759,
+      "length": 2378
+    },
+    {
+      "name": "bezier.sty",
+      "offset": 330137,
+      "length": 2060
+    },
+    {
+      "name": "bk10.clo",
+      "offset": 332197,
+      "length": 8288
+    },
+    {
+      "name": "bk11.clo",
+      "offset": 340485,
+      "length": 8303
+    },
+    {
+      "name": "bk12.clo",
+      "offset": 348788,
+      "length": 8285
+    },
+    {
+      "name": "book.cls",
+      "offset": 357073,
+      "length": 23268
+    },
+    {
+      "name": "book.sty",
+      "offset": 380341,
+      "length": 1722
+    },
+    {
+      "name": "catchfile.sty",
+      "offset": 382063,
+      "length": 8622
+    },
+    {
+      "name": "cm.map",
+      "offset": 390685,
+      "length": 2538
+    },
+    {
+      "name": "cmb10.pfb",
+      "offset": 393223,
+      "length": 31983
+    },
+    {
+      "name": "cmb10.tfm",
+      "offset": 425206,
+      "length": 1336
+    },
+    {
+      "name": "cmbsy10.pfb",
+      "offset": 426542,
+      "length": 34793
+    },
+    {
+      "name": "cmbsy10.tfm",
+      "offset": 461335,
+      "length": 1116
+    },
+    {
+      "name": "cmbsy5.pfb",
+      "offset": 462451,
+      "length": 33824
+    },
+    {
+      "name": "cmbsy5.tfm",
+      "offset": 496275,
+      "length": 1120
+    },
+    {
+      "name": "cmbsy6.pfb",
+      "offset": 497395,
+      "length": 33380
+    },
+    {
+      "name": "cmbsy6.tfm",
+      "offset": 530775,
+      "length": 1124
+    },
+    {
+      "name": "cmbsy7.pfb",
+      "offset": 531899,
+      "length": 30068
+    },
+    {
+      "name": "cmbsy7.tfm",
+      "offset": 561967,
+      "length": 1120
+    },
+    {
+      "name": "cmbsy8.pfb",
+      "offset": 563087,
+      "length": 29407
+    },
+    {
+      "name": "cmbsy8.tfm",
+      "offset": 592494,
+      "length": 1120
+    },
+    {
+      "name": "cmbsy9.pfb",
+      "offset": 593614,
+      "length": 27817
+    },
+    {
+      "name": "cmbsy9.tfm",
+      "offset": 621431,
+      "length": 1112
+    },
+    {
+      "name": "cmbx10.pfb",
+      "offset": 622543,
+      "length": 34811
+    },
+    {
+      "name": "cmbx10.tfm",
+      "offset": 657354,
+      "length": 1328
+    },
+    {
+      "name": "cmbx12.pfb",
+      "offset": 658682,
+      "length": 32080
+    },
+    {
+      "name": "cmbx12.tfm",
+      "offset": 690762,
+      "length": 1324
+    },
+    {
+      "name": "cmbx5.pfb",
+      "offset": 692086,
+      "length": 32034
+    },
+    {
+      "name": "cmbx5.tfm",
+      "offset": 724120,
+      "length": 1332
+    },
+    {
+      "name": "cmbx6.pfb",
+      "offset": 725452,
+      "length": 32378
+    },
+    {
+      "name": "cmbx6.tfm",
+      "offset": 757830,
+      "length": 1344
+    },
+    {
+      "name": "cmbx7.pfb",
+      "offset": 759174,
+      "length": 32007
+    },
+    {
+      "name": "cmbx7.tfm",
+      "offset": 791181,
+      "length": 1336
+    },
+    {
+      "name": "cmbx8.pfb",
+      "offset": 792517,
+      "length": 32166
+    },
+    {
+      "name": "cmbx8.tfm",
+      "offset": 824683,
+      "length": 1332
+    },
+    {
+      "name": "cmbx9.pfb",
+      "offset": 826015,
+      "length": 32298
+    },
+    {
+      "name": "cmbx9.tfm",
+      "offset": 858313,
+      "length": 1328
+    },
+    {
+      "name": "cmbxsl10.pfb",
+      "offset": 859641,
+      "length": 33268
+    },
+    {
+      "name": "cmbxsl10.tfm",
+      "offset": 892909,
+      "length": 1532
+    },
+    {
+      "name": "cmbxti10.pfb",
+      "offset": 894441,
+      "length": 36554
+    },
+    {
+      "name": "cmbxti10.tfm",
+      "offset": 930995,
+      "length": 1532
+    },
+    {
+      "name": "cmcsc10.pfb",
+      "offset": 932527,
+      "length": 32001
+    },
+    {
+      "name": "cmcsc10.tfm",
+      "offset": 964528,
+      "length": 1300
+    },
+    {
+      "name": "cmcsc8.pfb",
+      "offset": 965828,
+      "length": 32957
+    },
+    {
+      "name": "cmcsc8.tfm",
+      "offset": 998785,
+      "length": 1304
+    },
+    {
+      "name": "cmcsc9.pfb",
+      "offset": 1000089,
+      "length": 31942
+    },
+    {
+      "name": "cmcsc9.tfm",
+      "offset": 1032031,
+      "length": 1300
+    },
+    {
+      "name": "cmdunh10.pfb",
+      "offset": 1033331,
+      "length": 33089
+    },
+    {
+      "name": "cmdunh10.tfm",
+      "offset": 1066420,
+      "length": 1296
+    },
+    {
+      "name": "cmex10.pfb",
+      "offset": 1067716,
+      "length": 30251
+    },
+    {
+      "name": "cmex10.tfm",
+      "offset": 1097967,
+      "length": 992
+    },
+    {
+      "name": "cmex7.pfb",
+      "offset": 1098959,
+      "length": 30457
+    },
+    {
+      "name": "cmex7.tfm",
+      "offset": 1129416,
+      "length": 1004
+    },
+    {
+      "name": "cmex8.pfb",
+      "offset": 1130420,
+      "length": 30273
+    },
+    {
+      "name": "cmex8.tfm",
+      "offset": 1160693,
+      "length": 988
+    },
+    {
+      "name": "cmex9.pfb",
+      "offset": 1161681,
+      "length": 30212
+    },
+    {
+      "name": "cmex9.tfm",
+      "offset": 1191893,
+      "length": 996
+    },
+    {
+      "name": "cmextra.map",
+      "offset": 1192889,
+      "length": 636
+    },
+    {
+      "name": "cmff10.pfb",
+      "offset": 1193525,
+      "length": 33987
+    },
+    {
+      "name": "cmff10.tfm",
+      "offset": 1227512,
+      "length": 1324
+    },
+    {
+      "name": "cmfi10.pfb",
+      "offset": 1228836,
+      "length": 34247
+    },
+    {
+      "name": "cmfi10.tfm",
+      "offset": 1263083,
+      "length": 1424
+    },
+    {
+      "name": "cmfib8.pfb",
+      "offset": 1264507,
+      "length": 32945
+    },
+    {
+      "name": "cmfib8.tfm",
+      "offset": 1297452,
+      "length": 1280
+    },
+    {
+      "name": "cminch.pfb",
+      "offset": 1298732,
+      "length": 8797
+    },
+    {
+      "name": "cminch.tfm",
+      "offset": 1307529,
+      "length": 492
+    },
+    {
+      "name": "cmitt10.pfb",
+      "offset": 1308021,
+      "length": 26057
+    },
+    {
+      "name": "cmitt10.tfm",
+      "offset": 1334078,
+      "length": 768
+    },
+    {
+      "name": "cmmi10.pfb",
+      "offset": 1334846,
+      "length": 36299
+    },
+    {
+      "name": "cmmi10.tfm",
+      "offset": 1371145,
+      "length": 1528
+    },
+    {
+      "name": "cmmi12.pfb",
+      "offset": 1372673,
+      "length": 36741
+    },
+    {
+      "name": "cmmi12.tfm",
+      "offset": 1409414,
+      "length": 1524
+    },
+    {
+      "name": "cmmi5.pfb",
+      "offset": 1410938,
+      "length": 37912
+    },
+    {
+      "name": "cmmi5.tfm",
+      "offset": 1448850,
+      "length": 1508
+    },
+    {
+      "name": "cmmi6.pfb",
+      "offset": 1450358,
+      "length": 37166
+    },
+    {
+      "name": "cmmi6.tfm",
+      "offset": 1487524,
+      "length": 1512
+    },
+    {
+      "name": "cmmi7.pfb",
+      "offset": 1489036,
+      "length": 36281
+    },
+    {
+      "name": "cmmi7.tfm",
+      "offset": 1525317,
+      "length": 1528
+    },
+    {
+      "name": "cmmi8.pfb",
+      "offset": 1526845,
+      "length": 35469
+    },
+    {
+      "name": "cmmi8.tfm",
+      "offset": 1562314,
+      "length": 1520
+    },
+    {
+      "name": "cmmi9.pfb",
+      "offset": 1563834,
+      "length": 36094
+    },
+    {
+      "name": "cmmi9.tfm",
+      "offset": 1599928,
+      "length": 1524
+    },
+    {
+      "name": "cmmib10.pfb",
+      "offset": 1601452,
+      "length": 36912
+    },
+    {
+      "name": "cmmib10.tfm",
+      "offset": 1638364,
+      "length": 1524
+    },
+    {
+      "name": "cmmib5.pfb",
+      "offset": 1639888,
+      "length": 40540
+    },
+    {
+      "name": "cmmib5.tfm",
+      "offset": 1680428,
+      "length": 1496
+    },
+    {
+      "name": "cmmib57.sty",
+      "offset": 1681924,
+      "length": 1068
+    },
+    {
+      "name": "cmmib6.pfb",
+      "offset": 1682992,
+      "length": 38151
+    },
+    {
+      "name": "cmmib6.tfm",
+      "offset": 1721143,
+      "length": 1516
+    },
+    {
+      "name": "cmmib7.pfb",
+      "offset": 1722659,
+      "length": 39386
+    },
+    {
+      "name": "cmmib7.tfm",
+      "offset": 1762045,
+      "length": 1508
+    },
+    {
+      "name": "cmmib8.pfb",
+      "offset": 1763553,
+      "length": 35479
+    },
+    {
+      "name": "cmmib8.tfm",
+      "offset": 1799032,
+      "length": 1528
+    },
+    {
+      "name": "cmmib9.pfb",
+      "offset": 1800560,
+      "length": 36510
+    },
+    {
+      "name": "cmmib9.tfm",
+      "offset": 1837070,
+      "length": 1528
+    },
+    {
+      "name": "cmr10.pfb",
+      "offset": 1838598,
+      "length": 35752
+    },
+    {
+      "name": "cmr10.tfm",
+      "offset": 1874350,
+      "length": 1296
+    },
+    {
+      "name": "cmr12.pfb",
+      "offset": 1875646,
+      "length": 32722
+    },
+    {
+      "name": "cmr12.tfm",
+      "offset": 1908368,
+      "length": 1288
+    },
+    {
+      "name": "cmr17.pfb",
+      "offset": 1909656,
+      "length": 32362
+    },
+    {
+      "name": "cmr17.tfm",
+      "offset": 1942018,
+      "length": 1292
+    },
+    {
+      "name": "cmr5.pfb",
+      "offset": 1943310,
+      "length": 31809
+    },
+    {
+      "name": "cmr5.tfm",
+      "offset": 1975119,
+      "length": 1220
+    },
+    {
+      "name": "cmr6.pfb",
+      "offset": 1976339,
+      "length": 32734
+    },
+    {
+      "name": "cmr6.tfm",
+      "offset": 2009073,
+      "length": 1300
+    },
+    {
+      "name": "cmr7.pfb",
+      "offset": 2010373,
+      "length": 32762
+    },
+    {
+      "name": "cmr7.tfm",
+      "offset": 2043135,
+      "length": 1300
+    },
+    {
+      "name": "cmr8.pfb",
+      "offset": 2044435,
+      "length": 32726
+    },
+    {
+      "name": "cmr8.tfm",
+      "offset": 2077161,
+      "length": 1292
+    },
+    {
+      "name": "cmr9.pfb",
+      "offset": 2078453,
+      "length": 33993
+    },
+    {
+      "name": "cmr9.tfm",
+      "offset": 2112446,
+      "length": 1292
+    },
+    {
+      "name": "cmsl10.pfb",
+      "offset": 2113738,
+      "length": 35022
+    },
+    {
+      "name": "cmsl10.tfm",
+      "offset": 2148760,
+      "length": 1508
+    },
+    {
+      "name": "cmsl12.pfb",
+      "offset": 2150268,
+      "length": 34586
+    },
+    {
+      "name": "cmsl12.tfm",
+      "offset": 2184854,
+      "length": 1504
+    },
+    {
+      "name": "cmsl8.pfb",
+      "offset": 2186358,
+      "length": 34511
+    },
+    {
+      "name": "cmsl8.tfm",
+      "offset": 2220869,
+      "length": 1504
+    },
+    {
+      "name": "cmsl9.pfb",
+      "offset": 2222373,
+      "length": 34568
+    },
+    {
+      "name": "cmsl9.tfm",
+      "offset": 2256941,
+      "length": 1504
+    },
+    {
+      "name": "cmsltt10.pfb",
+      "offset": 2258445,
+      "length": 30171
+    },
+    {
+      "name": "cmsltt10.tfm",
+      "offset": 2288616,
+      "length": 772
+    },
+    {
+      "name": "cmss10.pfb",
+      "offset": 2289388,
+      "length": 24457
+    },
+    {
+      "name": "cmss10.tfm",
+      "offset": 2313845,
+      "length": 1316
+    },
+    {
+      "name": "cmss12.pfb",
+      "offset": 2315161,
+      "length": 24393
+    },
+    {
+      "name": "cmss12.tfm",
+      "offset": 2339554,
+      "length": 1324
+    },
+    {
+      "name": "cmss17.pfb",
+      "offset": 2340878,
+      "length": 24416
+    },
+    {
+      "name": "cmss17.tfm",
+      "offset": 2365294,
+      "length": 1320
+    },
+    {
+      "name": "cmss8.pfb",
+      "offset": 2366614,
+      "length": 24420
+    },
+    {
+      "name": "cmss8.tfm",
+      "offset": 2391034,
+      "length": 1296
+    },
+    {
+      "name": "cmss9.pfb",
+      "offset": 2392330,
+      "length": 24373
+    },
+    {
+      "name": "cmss9.tfm",
+      "offset": 2416703,
+      "length": 1320
+    },
+    {
+      "name": "cmssbx10.pfb",
+      "offset": 2418023,
+      "length": 28902
+    },
+    {
+      "name": "cmssbx10.tfm",
+      "offset": 2446925,
+      "length": 1272
+    },
+    {
+      "name": "cmssdc10.pfb",
+      "offset": 2448197,
+      "length": 28932
+    },
+    {
+      "name": "cmssdc10.tfm",
+      "offset": 2477129,
+      "length": 1328
+    },
+    {
+      "name": "cmssi10.pfb",
+      "offset": 2478457,
+      "length": 25150
+    },
+    {
+      "name": "cmssi10.tfm",
+      "offset": 2503607,
+      "length": 1520
+    },
+    {
+      "name": "cmssi12.pfb",
+      "offset": 2505127,
+      "length": 25095
+    },
+    {
+      "name": "cmssi12.tfm",
+      "offset": 2530222,
+      "length": 1532
+    },
+    {
+      "name": "cmssi17.pfb",
+      "offset": 2531754,
+      "length": 24977
+    },
+    {
+      "name": "cmssi17.tfm",
+      "offset": 2556731,
+      "length": 1528
+    },
+    {
+      "name": "cmssi8.pfb",
+      "offset": 2558259,
+      "length": 25168
+    },
+    {
+      "name": "cmssi8.tfm",
+      "offset": 2583427,
+      "length": 1500
+    },
+    {
+      "name": "cmssi9.pfb",
+      "offset": 2584927,
+      "length": 25029
+    },
+    {
+      "name": "cmssi9.tfm",
+      "offset": 2609956,
+      "length": 1524
+    },
+    {
+      "name": "cmssq8.pfb",
+      "offset": 2611480,
+      "length": 28158
+    },
+    {
+      "name": "cmssq8.tfm",
+      "offset": 2639638,
+      "length": 1304
+    },
+    {
+      "name": "cmssqi8.pfb",
+      "offset": 2640942,
+      "length": 29668
+    },
+    {
+      "name": "cmssqi8.tfm",
+      "offset": 2670610,
+      "length": 1496
+    },
+    {
+      "name": "cmsy10.pfb",
+      "offset": 2672106,
+      "length": 32569
+    },
+    {
+      "name": "cmsy10.tfm",
+      "offset": 2704675,
+      "length": 1124
+    },
+    {
+      "name": "cmsy5.pfb",
+      "offset": 2705799,
+      "length": 32915
+    },
+    {
+      "name": "cmsy5.tfm",
+      "offset": 2738714,
+      "length": 1112
+    },
+    {
+      "name": "cmsy6.pfb",
+      "offset": 2739826,
+      "length": 32587
+    },
+    {
+      "name": "cmsy6.tfm",
+      "offset": 2772413,
+      "length": 1116
+    },
+    {
+      "name": "cmsy7.pfb",
+      "offset": 2773529,
+      "length": 32716
+    },
+    {
+      "name": "cmsy7.tfm",
+      "offset": 2806245,
+      "length": 1120
+    },
+    {
+      "name": "cmsy8.pfb",
+      "offset": 2807365,
+      "length": 32626
+    },
+    {
+      "name": "cmsy8.tfm",
+      "offset": 2839991,
+      "length": 1120
+    },
+    {
+      "name": "cmsy9.pfb",
+      "offset": 2841111,
+      "length": 32442
+    },
+    {
+      "name": "cmsy9.tfm",
+      "offset": 2873553,
+      "length": 1116
+    },
+    {
+      "name": "cmtcsc10.pfb",
+      "offset": 2874669,
+      "length": 29025
+    },
+    {
+      "name": "cmtcsc10.tfm",
+      "offset": 2903694,
+      "length": 776
+    },
+    {
+      "name": "cmtex10.pfb",
+      "offset": 2904470,
+      "length": 29352
+    },
+    {
+      "name": "cmtex10.tfm",
+      "offset": 2933822,
+      "length": 768
+    },
+    {
+      "name": "cmtex8.pfb",
+      "offset": 2934590,
+      "length": 24887
+    },
+    {
+      "name": "cmtex8.tfm",
+      "offset": 2959477,
+      "length": 768
+    },
+    {
+      "name": "cmtex9.pfb",
+      "offset": 2960245,
+      "length": 29687
+    },
+    {
+      "name": "cmtex9.tfm",
+      "offset": 2989932,
+      "length": 764
+    },
+    {
+      "name": "cmtext-bsr-interpolated.map",
+      "offset": 2990696,
+      "length": 515
+    },
+    {
+      "name": "cmti10.pfb",
+      "offset": 2991211,
+      "length": 37944
+    },
+    {
+      "name": "cmti10.tfm",
+      "offset": 3029155,
+      "length": 1480
+    },
+    {
+      "name": "cmti12.pfb",
+      "offset": 3030635,
+      "length": 36118
+    },
+    {
+      "name": "cmti12.tfm",
+      "offset": 3066753,
+      "length": 1484
+    },
+    {
+      "name": "cmti7.pfb",
+      "offset": 3068237,
+      "length": 36607
+    },
+    {
+      "name": "cmti7.tfm",
+      "offset": 3104844,
+      "length": 1492
+    },
+    {
+      "name": "cmti8.pfb",
+      "offset": 3106336,
+      "length": 35660
+    },
+    {
+      "name": "cmti8.tfm",
+      "offset": 3141996,
+      "length": 1504
+    },
+    {
+      "name": "cmti9.pfb",
+      "offset": 3143500,
+      "length": 36310
+    },
+    {
+      "name": "cmti9.tfm",
+      "offset": 3179810,
+      "length": 1476
+    },
+    {
+      "name": "cmtt10.pfb",
+      "offset": 3181286,
+      "length": 31099
+    },
+    {
+      "name": "cmtt10.tfm",
+      "offset": 3212385,
+      "length": 768
+    },
+    {
+      "name": "cmtt12.pfb",
+      "offset": 3213153,
+      "length": 24252
+    },
+    {
+      "name": "cmtt12.tfm",
+      "offset": 3237405,
+      "length": 772
+    },
+    {
+      "name": "cmtt8.pfb",
+      "offset": 3238177,
+      "length": 24287
+    },
+    {
+      "name": "cmtt8.tfm",
+      "offset": 3262464,
+      "length": 768
+    },
+    {
+      "name": "cmtt9.pfb",
+      "offset": 3263232,
+      "length": 29078
+    },
+    {
+      "name": "cmtt9.tfm",
+      "offset": 3292310,
+      "length": 764
+    },
+    {
+      "name": "cmu10.pfb",
+      "offset": 3293074,
+      "length": 32955
+    },
+    {
+      "name": "cmu10.tfm",
+      "offset": 3326029,
+      "length": 1276
+    },
+    {
+      "name": "cmvtt10.pfb",
+      "offset": 3327305,
+      "length": 29471
+    },
+    {
+      "name": "cmvtt10.tfm",
+      "offset": 3356776,
+      "length": 1248
+    },
+    {
+      "name": "color.cfg",
+      "offset": 3358024,
+      "length": 1213
+    },
+    {
+      "name": "color.sty",
+      "offset": 3359237,
+      "length": 7256
+    },
+    {
+      "name": "cp1250.def",
+      "offset": 3366493,
+      "length": 6236
+    },
+    {
+      "name": "cp1252.def",
+      "offset": 3372729,
+      "length": 6818
+    },
+    {
+      "name": "cp1257.def",
+      "offset": 3379547,
+      "length": 6449
+    },
+    {
+      "name": "cp437.def",
+      "offset": 3385996,
+      "length": 4797
+    },
+    {
+      "name": "cp437de.def",
+      "offset": 3390793,
+      "length": 4803
+    },
+    {
+      "name": "cp850.def",
+      "offset": 3395596,
+      "length": 6056
+    },
+    {
+      "name": "cp852.def",
+      "offset": 3401652,
+      "length": 5509
+    },
+    {
+      "name": "cp858.def",
+      "offset": 3407161,
+      "length": 6008
+    },
+    {
+      "name": "cp865.def",
+      "offset": 3413169,
+      "length": 4865
+    },
+    {
+      "name": "cyracc.def",
+      "offset": 3418034,
+      "length": 9087
+    },
+    {
+      "name": "cyrillic.map",
+      "offset": 3427121,
+      "length": 960
+    },
+    {
+      "name": "decmulti.def",
+      "offset": 3428081,
+      "length": 5000
+    },
+    {
+      "name": "doc-2016-02-15.sty",
+      "offset": 3433081,
+      "length": 29965
+    },
+    {
+      "name": "doc-2021-06-01.sty",
+      "offset": 3463046,
+      "length": 30499
+    },
+    {
+      "name": "doc.sty",
+      "offset": 3493545,
+      "length": 42946
+    },
+    {
+      "name": "dummy.tfm",
+      "offset": 3536491,
+      "length": 200
+    },
+    {
+      "name": "dvipdf.def",
+      "offset": 3536691,
+      "length": 4579
+    },
+    {
+      "name": "dvipdfmx.def",
+      "offset": 3541270,
+      "length": 12466
+    },
+    {
+      "name": "dvips.def",
+      "offset": 3553736,
+      "length": 6789
+    },
+    {
+      "name": "dvipsnam.def",
+      "offset": 3560525,
+      "length": 5009
+    },
+    {
+      "name": "dvipsone.def",
+      "offset": 3565534,
+      "length": 4608
+    },
+    {
+      "name": "dvisvgm.def",
+      "offset": 3570142,
+      "length": 9201
+    },
+    {
+      "name": "dviwin.def",
+      "offset": 3579343,
+      "length": 1262
+    },
+    {
+      "name": "emtex.def",
+      "offset": 3580605,
+      "length": 1243
+    },
+    {
+      "name": "epsfig.sty",
+      "offset": 3581848,
+      "length": 3449
+    },
+    {
+      "name": "epstopdf-base.sty",
+      "offset": 3585297,
+      "length": 13886
+    },
+    {
+      "name": "epstopdf.sty",
+      "offset": 3599183,
+      "length": 4393
+    },
+    {
+      "name": "etexcmds.sty",
+      "offset": 3603576,
+      "length": 7734
+    },
+    {
+      "name": "eucal.sty",
+      "offset": 3611310,
+      "length": 1354
+    },
+    {
+      "name": "euex10.pfb",
+      "offset": 3612664,
+      "length": 12536
+    },
+    {
+      "name": "euex10.tfm",
+      "offset": 3625200,
+      "length": 808
+    },
+    {
+      "name": "euex7.pfb",
+      "offset": 3626008,
+      "length": 12103
+    },
+    {
+      "name": "euex7.tfm",
+      "offset": 3638111,
+      "length": 808
+    },
+    {
+      "name": "euex8.pfb",
+      "offset": 3638919,
+      "length": 12054
+    },
+    {
+      "name": "euex8.tfm",
+      "offset": 3650973,
+      "length": 808
+    },
+    {
+      "name": "euex9.pfb",
+      "offset": 3651781,
+      "length": 11989
+    },
+    {
+      "name": "euex9.tfm",
+      "offset": 3663770,
+      "length": 812
+    },
+    {
+      "name": "eufb10.pfb",
+      "offset": 3664582,
+      "length": 21346
+    },
+    {
+      "name": "eufb10.tfm",
+      "offset": 3685928,
+      "length": 1028
+    },
+    {
+      "name": "eufb5.pfb",
+      "offset": 3686956,
+      "length": 21612
+    },
+    {
+      "name": "eufb5.tfm",
+      "offset": 3708568,
+      "length": 1028
+    },
+    {
+      "name": "eufb6.tfm",
+      "offset": 3709596,
+      "length": 1028
+    },
+    {
+      "name": "eufb7.pfb",
+      "offset": 3710624,
+      "length": 21375
+    },
+    {
+      "name": "eufb7.tfm",
+      "offset": 3731999,
+      "length": 1028
+    },
+    {
+      "name": "eufb8.tfm",
+      "offset": 3733027,
+      "length": 1028
+    },
+    {
+      "name": "eufb9.tfm",
+      "offset": 3734055,
+      "length": 1028
+    },
+    {
+      "name": "eufm10.pfb",
+      "offset": 3735083,
+      "length": 21098
+    },
+    {
+      "name": "eufm10.tfm",
+      "offset": 3756181,
+      "length": 1040
+    },
+    {
+      "name": "eufm5.pfb",
+      "offset": 3757221,
+      "length": 21550
+    },
+    {
+      "name": "eufm5.tfm",
+      "offset": 3778771,
+      "length": 1040
+    },
+    {
+      "name": "eufm6.tfm",
+      "offset": 3779811,
+      "length": 1040
+    },
+    {
+      "name": "eufm7.pfb",
+      "offset": 3780851,
+      "length": 21251
+    },
+    {
+      "name": "eufm7.tfm",
+      "offset": 3802102,
+      "length": 1040
+    },
+    {
+      "name": "eufm8.tfm",
+      "offset": 3803142,
+      "length": 1040
+    },
+    {
+      "name": "eufm9.tfm",
+      "offset": 3804182,
+      "length": 1040
+    },
+    {
+      "name": "eufrak.sty",
+      "offset": 3805222,
+      "length": 1306
+    },
+    {
+      "name": "euler.map",
+      "offset": 3806528,
+      "length": 1615
+    },
+    {
+      "name": "eurb10.pfb",
+      "offset": 3808143,
+      "length": 22394
+    },
+    {
+      "name": "eurb10.tfm",
+      "offset": 3830537,
+      "length": 1208
+    },
+    {
+      "name": "eurb5.pfb",
+      "offset": 3831745,
+      "length": 22964
+    },
+    {
+      "name": "eurb5.tfm",
+      "offset": 3854709,
+      "length": 1208
+    },
+    {
+      "name": "eurb6.tfm",
+      "offset": 3855917,
+      "length": 1208
+    },
+    {
+      "name": "eurb7.pfb",
+      "offset": 3857125,
+      "length": 22659
+    },
+    {
+      "name": "eurb7.tfm",
+      "offset": 3879784,
+      "length": 1208
+    },
+    {
+      "name": "eurb8.tfm",
+      "offset": 3880992,
+      "length": 1208
+    },
+    {
+      "name": "eurb9.tfm",
+      "offset": 3882200,
+      "length": 1208
+    },
+    {
+      "name": "eurm10.pfb",
+      "offset": 3883408,
+      "length": 22644
+    },
+    {
+      "name": "eurm10.tfm",
+      "offset": 3906052,
+      "length": 1228
+    },
+    {
+      "name": "eurm5.pfb",
+      "offset": 3907280,
+      "length": 23170
+    },
+    {
+      "name": "eurm5.tfm",
+      "offset": 3930450,
+      "length": 1228
+    },
+    {
+      "name": "eurm6.tfm",
+      "offset": 3931678,
+      "length": 1228
+    },
+    {
+      "name": "eurm7.pfb",
+      "offset": 3932906,
+      "length": 22927
+    },
+    {
+      "name": "eurm7.tfm",
+      "offset": 3955833,
+      "length": 1228
+    },
+    {
+      "name": "eurm8.tfm",
+      "offset": 3957061,
+      "length": 1228
+    },
+    {
+      "name": "eurm9.tfm",
+      "offset": 3958289,
+      "length": 1228
+    },
+    {
+      "name": "eusb10.pfb",
+      "offset": 3959517,
+      "length": 10672
+    },
+    {
+      "name": "eusb10.tfm",
+      "offset": 3970189,
+      "length": 884
+    },
+    {
+      "name": "eusb5.pfb",
+      "offset": 3971073,
+      "length": 10761
+    },
+    {
+      "name": "eusb5.tfm",
+      "offset": 3981834,
+      "length": 884
+    },
+    {
+      "name": "eusb6.tfm",
+      "offset": 3982718,
+      "length": 884
+    },
+    {
+      "name": "eusb7.pfb",
+      "offset": 3983602,
+      "length": 10875
+    },
+    {
+      "name": "eusb7.tfm",
+      "offset": 3994477,
+      "length": 884
+    },
+    {
+      "name": "eusb8.tfm",
+      "offset": 3995361,
+      "length": 884
+    },
+    {
+      "name": "eusb9.tfm",
+      "offset": 3996245,
+      "length": 884
+    },
+    {
+      "name": "euscript.sty",
+      "offset": 3997129,
+      "length": 1319
+    },
+    {
+      "name": "eusm10.pfb",
+      "offset": 3998448,
+      "length": 10538
+    },
+    {
+      "name": "eusm10.tfm",
+      "offset": 4008986,
+      "length": 896
+    },
+    {
+      "name": "eusm5.pfb",
+      "offset": 4009882,
+      "length": 10799
+    },
+    {
+      "name": "eusm5.tfm",
+      "offset": 4020681,
+      "length": 896
+    },
+    {
+      "name": "eusm6.tfm",
+      "offset": 4021577,
+      "length": 896
+    },
+    {
+      "name": "eusm7.pfb",
+      "offset": 4022473,
+      "length": 10655
+    },
+    {
+      "name": "eusm7.tfm",
+      "offset": 4033128,
+      "length": 896
+    },
+    {
+      "name": "eusm8.tfm",
+      "offset": 4034024,
+      "length": 896
+    },
+    {
+      "name": "eusm9.tfm",
+      "offset": 4034920,
+      "length": 896
+    },
+    {
+      "name": "expl3.sty",
+      "offset": 4035816,
+      "length": 4381
+    },
+    {
+      "name": "exscale.sty",
+      "offset": 4040197,
+      "length": 2622
+    },
+    {
+      "name": "fix-cm.sty",
+      "offset": 4042819,
+      "length": 14741
+    },
+    {
+      "name": "fixltx2e.sty",
+      "offset": 4057560,
+      "length": 15509
+    },
+    {
+      "name": "flafter.sty",
+      "offset": 4073069,
+      "length": 13703
+    },
+    {
+      "name": "fleqn.clo",
+      "offset": 4086772,
+      "length": 4832
+    },
+    {
+      "name": "fleqn.sty",
+      "offset": 4091604,
+      "length": 1703
+    },
+    {
+      "name": "fltrace.sty",
+      "offset": 4093307,
+      "length": 47108
+    },
+    {
+      "name": "fontenc.sty",
+      "offset": 4140415,
+      "length": 5275
+    },
+    {
+      "name": "fontmath.cfg",
+      "offset": 4145690,
+      "length": 1978
+    },
+    {
+      "name": "fonttext.cfg",
+      "offset": 4147668,
+      "length": 1978
+    },
+    {
+      "name": "graphics-2017-06-25.sty",
+      "offset": 4149646,
+      "length": 15577
+    },
+    {
+      "name": "graphics.cfg",
+      "offset": 4165223,
+      "length": 1224
+    },
+    {
+      "name": "graphics.sty",
+      "offset": 4166447,
+      "length": 15577
+    },
+    {
+      "name": "graphicx.sty",
+      "offset": 4182024,
+      "length": 8118
+    },
+    {
+      "name": "graphpap.sty",
+      "offset": 4190142,
+      "length": 3390
+    },
+    {
+      "name": "grfext.sty",
+      "offset": 4193532,
+      "length": 7133
+    },
+    {
+      "name": "icmcsc10.tfm",
+      "offset": 4200665,
+      "length": 1300
+    },
+    {
+      "name": "icmex10.tfm",
+      "offset": 4201965,
+      "length": 992
+    },
+    {
+      "name": "icmmi8.tfm",
+      "offset": 4202957,
+      "length": 1520
+    },
+    {
+      "name": "icmsy8.tfm",
+      "offset": 4204477,
+      "length": 1120
+    },
+    {
+      "name": "icmtt8.tfm",
+      "offset": 4205597,
+      "length": 768
+    },
+    {
+      "name": "ifetex.sty",
+      "offset": 4206365,
+      "length": 529
+    },
+    {
+      "name": "ifluatex.sty",
+      "offset": 4206894,
+      "length": 492
+    },
+    {
+      "name": "ifpdf.sty",
+      "offset": 4207386,
+      "length": 480
+    },
+    {
+      "name": "iftex.sty",
+      "offset": 4207866,
+      "length": 7984
+    },
+    {
+      "name": "ifthen.sty",
+      "offset": 4215850,
+      "length": 5525
+    },
+    {
+      "name": "ifvtex.sty",
+      "offset": 4221375,
+      "length": 1057
+    },
+    {
+      "name": "ifxetex.sty",
+      "offset": 4222432,
+      "length": 488
+    },
+    {
+      "name": "ilasy8.tfm",
+      "offset": 4222920,
+      "length": 520
+    },
+    {
+      "name": "ilcmss8.tfm",
+      "offset": 4223440,
+      "length": 1304
+    },
+    {
+      "name": "ilcmssb8.tfm",
+      "offset": 4224744,
+      "length": 1316
+    },
+    {
+      "name": "ilcmssi8.tfm",
+      "offset": 4226060,
+      "length": 1496
+    },
+    {
+      "name": "infwarerr.sty",
+      "offset": 4227556,
+      "length": 8356
+    },
+    {
+      "name": "inputenc.sty",
+      "offset": 4235912,
+      "length": 5048
+    },
+    {
+      "name": "keyval.sty",
+      "offset": 4240960,
+      "length": 2671
+    },
+    {
+      "name": "kvdefinekeys.sty",
+      "offset": 4243631,
+      "length": 5412
+    },
+    {
+      "name": "kvoptions-patch.sty",
+      "offset": 4249043,
+      "length": 14825
+    },
+    {
+      "name": "kvoptions.sty",
+      "offset": 4263868,
+      "length": 22555
+    },
+    {
+      "name": "kvsetkeys.sty",
+      "offset": 4286423,
+      "length": 13815
+    },
+    {
+      "name": "l3backend-dvipdfmx.def",
+      "offset": 4300238,
+      "length": 22143
+    },
+    {
+      "name": "l3backend-dvips.def",
+      "offset": 4322381,
+      "length": 26613
+    },
+    {
+      "name": "l3backend-dvisvgm.def",
+      "offset": 4348994,
+      "length": 17259
+    },
+    {
+      "name": "l3backend-pdfmode.def",
+      "offset": 4366253,
+      "length": 25404
+    },
+    {
+      "name": "l3backend-xdvipdfmx.def",
+      "offset": 4391657,
+      "length": 24128
+    },
+    {
+      "name": "l3debug.def",
+      "offset": 4415785,
+      "length": 27561
+    },
+    {
+      "name": "l3deprecation.def",
+      "offset": 4443346,
+      "length": 12508
+    },
+    {
+      "name": "l3doc.cls",
+      "offset": 4455854,
+      "length": 78068
+    },
+    {
+      "name": "l3in2edoc.cls",
+      "offset": 4533922,
+      "length": 1717
+    },
+    {
+      "name": "l3str-enc-iso88591.def",
+      "offset": 4535639,
+      "length": 795
+    },
+    {
+      "name": "l3str-enc-iso885910.def",
+      "offset": 4536434,
+      "length": 1719
+    },
+    {
+      "name": "l3str-enc-iso885911.def",
+      "offset": 4538153,
+      "length": 2583
+    },
+    {
+      "name": "l3str-enc-iso885913.def",
+      "offset": 4540736,
+      "length": 1919
+    },
+    {
+      "name": "l3str-enc-iso885914.def",
+      "offset": 4542655,
+      "length": 1419
+    },
+    {
+      "name": "l3str-enc-iso885915.def",
+      "offset": 4544074,
+      "length": 959
+    },
+    {
+      "name": "l3str-enc-iso885916.def",
+      "offset": 4545033,
+      "length": 1599
+    },
+    {
+      "name": "l3str-enc-iso88592.def",
+      "offset": 4546632,
+      "length": 1935
+    },
+    {
+      "name": "l3str-enc-iso88593.def",
+      "offset": 4548567,
+      "length": 1432
+    },
+    {
+      "name": "l3str-enc-iso88594.def",
+      "offset": 4549999,
+      "length": 1795
+    },
+    {
+      "name": "l3str-enc-iso88595.def",
+      "offset": 4551794,
+      "length": 2675
+    },
+    {
+      "name": "l3str-enc-iso88596.def",
+      "offset": 4554469,
+      "length": 2107
+    },
+    {
+      "name": "l3str-enc-iso88597.def",
+      "offset": 4556576,
+      "length": 2357
+    },
+    {
+      "name": "l3str-enc-iso88598.def",
+      "offset": 4558933,
+      "length": 1820
+    },
+    {
+      "name": "l3str-enc-iso88599.def",
+      "offset": 4560753,
+      "length": 915
+    },
+    {
+      "name": "lasy10.pfb",
+      "offset": 4561668,
+      "length": 10304
+    },
+    {
+      "name": "lasy10.tfm",
+      "offset": 4571972,
+      "length": 520
+    },
+    {
+      "name": "lasy5.pfb",
+      "offset": 4572492,
+      "length": 5409
+    },
+    {
+      "name": "lasy5.tfm",
+      "offset": 4577901,
+      "length": 520
+    },
+    {
+      "name": "lasy6.pfb",
+      "offset": 4578421,
+      "length": 5369
+    },
+    {
+      "name": "lasy6.tfm",
+      "offset": 4583790,
+      "length": 520
+    },
+    {
+      "name": "lasy7.pfb",
+      "offset": 4584310,
+      "length": 5360
+    },
+    {
+      "name": "lasy7.tfm",
+      "offset": 4589670,
+      "length": 520
+    },
+    {
+      "name": "lasy8.pfb",
+      "offset": 4590190,
+      "length": 5395
+    },
+    {
+      "name": "lasy8.tfm",
+      "offset": 4595585,
+      "length": 520
+    },
+    {
+      "name": "lasy9.pfb",
+      "offset": 4596105,
+      "length": 10156
+    },
+    {
+      "name": "lasy9.tfm",
+      "offset": 4606261,
+      "length": 520
+    },
+    {
+      "name": "lasyb10.pfb",
+      "offset": 4606781,
+      "length": 5370
+    },
+    {
+      "name": "lasyb10.tfm",
+      "offset": 4612151,
+      "length": 520
+    },
+    {
+      "name": "latex209.def",
+      "offset": 4612671,
+      "length": 12504
+    },
+    {
+      "name": "latexrelease.sty",
+      "offset": 4625175,
+      "length": 903203
+    },
+    {
+      "name": "latexsym.sty",
+      "offset": 5528378,
+      "length": 2853
+    },
+    {
+      "name": "latin1.def",
+      "offset": 5531231,
+      "length": 5675
+    },
+    {
+      "name": "latin10.def",
+      "offset": 5536906,
+      "length": 5391
+    },
+    {
+      "name": "latin2.def",
+      "offset": 5542297,
+      "length": 4954
+    },
+    {
+      "name": "latin3.def",
+      "offset": 5547251,
+      "length": 5067
+    },
+    {
+      "name": "latin4.def",
+      "offset": 5552318,
+      "length": 5191
+    },
+    {
+      "name": "latin5.def",
+      "offset": 5557509,
+      "length": 5652
+    },
+    {
+      "name": "latin9.def",
+      "offset": 5563161,
+      "length": 5321
+    },
+    {
+      "name": "latxfont.map",
+      "offset": 5568482,
+      "length": 788
+    },
+    {
+      "name": "lcircle1.pfb",
+      "offset": 5569270,
+      "length": 10594
+    },
+    {
+      "name": "lcircle10.tfm",
+      "offset": 5579864,
+      "length": 820
+    },
+    {
+      "name": "lcirclew.pfb",
+      "offset": 5580684,
+      "length": 10615
+    },
+    {
+      "name": "lcirclew10.tfm",
+      "offset": 5591299,
+      "length": 820
+    },
+    {
+      "name": "lcmss8.pfb",
+      "offset": 5592119,
+      "length": 37691
+    },
+    {
+      "name": "lcmss8.tfm",
+      "offset": 5629810,
+      "length": 1304
+    },
+    {
+      "name": "lcmssb8.pfb",
+      "offset": 5631114,
+      "length": 34561
+    },
+    {
+      "name": "lcmssb8.tfm",
+      "offset": 5665675,
+      "length": 1316
+    },
+    {
+      "name": "lcmssi8.pfb",
+      "offset": 5666991,
+      "length": 39505
+    },
+    {
+      "name": "lcmssi8.tfm",
+      "offset": 5706496,
+      "length": 1496
+    },
+    {
+      "name": "leqno.clo",
+      "offset": 5707992,
+      "length": 1958
+    },
+    {
+      "name": "leqno.sty",
+      "offset": 5709950,
+      "length": 1703
+    },
+    {
+      "name": "letter.cls",
+      "offset": 5711653,
+      "length": 13728
+    },
+    {
+      "name": "letter.sty",
+      "offset": 5725381,
+      "length": 1734
+    },
+    {
+      "name": "line10.pfb",
+      "offset": 5727115,
+      "length": 11493
+    },
+    {
+      "name": "line10.tfm",
+      "offset": 5738608,
+      "length": 748
+    },
+    {
+      "name": "linew10.pfb",
+      "offset": 5739356,
+      "length": 11895
+    },
+    {
+      "name": "linew10.tfm",
+      "offset": 5751251,
+      "length": 748
+    },
+    {
+      "name": "lscape.sty",
+      "offset": 5751999,
+      "length": 1822
+    },
+    {
+      "name": "ltnews.cls",
+      "offset": 5753821,
+      "length": 21481
+    },
+    {
+      "name": "ltxcmds.sty",
+      "offset": 5775302,
+      "length": 17865
+    },
+    {
+      "name": "ltxdoc.cfg",
+      "offset": 5793167,
+      "length": 2234
+    },
+    {
+      "name": "ltxdoc.cls",
+      "offset": 5795401,
+      "length": 8848
+    },
+    {
+      "name": "ltxguide.cls",
+      "offset": 5804249,
+      "length": 7528
+    },
+    {
+      "name": "luatex.def",
+      "offset": 5811777,
+      "length": 19638
+    },
+    {
+      "name": "macce.def",
+      "offset": 5831415,
+      "length": 3766
+    },
+    {
+      "name": "makeidx.sty",
+      "offset": 5835181,
+      "length": 1939
+    },
+    {
+      "name": "minimal.cls",
+      "offset": 5837120,
+      "length": 1941
+    },
+    {
+      "name": "msam10.pfb",
+      "offset": 5839061,
+      "length": 31764
+    },
+    {
+      "name": "msam10.tfm",
+      "offset": 5870825,
+      "length": 916
+    },
+    {
+      "name": "msam5.pfb",
+      "offset": 5871741,
+      "length": 33536
+    },
+    {
+      "name": "msam5.tfm",
+      "offset": 5905277,
+      "length": 924
+    },
+    {
+      "name": "msam6.pfb",
+      "offset": 5906201,
+      "length": 32654
+    },
+    {
+      "name": "msam6.tfm",
+      "offset": 5938855,
+      "length": 928
+    },
+    {
+      "name": "msam7.pfb",
+      "offset": 5939783,
+      "length": 33366
+    },
+    {
+      "name": "msam7.tfm",
+      "offset": 5973149,
+      "length": 928
+    },
+    {
+      "name": "msam8.pfb",
+      "offset": 5974077,
+      "length": 32516
+    },
+    {
+      "name": "msam8.tfm",
+      "offset": 6006593,
+      "length": 920
+    },
+    {
+      "name": "msam9.pfb",
+      "offset": 6007513,
+      "length": 32553
+    },
+    {
+      "name": "msam9.tfm",
+      "offset": 6040066,
+      "length": 920
+    },
+    {
+      "name": "msbm10.pfb",
+      "offset": 6040986,
+      "length": 34694
+    },
+    {
+      "name": "msbm10.tfm",
+      "offset": 6075680,
+      "length": 908
+    },
+    {
+      "name": "msbm5.pfb",
+      "offset": 6076588,
+      "length": 35457
+    },
+    {
+      "name": "msbm5.tfm",
+      "offset": 6112045,
+      "length": 940
+    },
+    {
+      "name": "msbm6.pfb",
+      "offset": 6112985,
+      "length": 39731
+    },
+    {
+      "name": "msbm6.tfm",
+      "offset": 6152716,
+      "length": 940
+    },
+    {
+      "name": "msbm7.pfb",
+      "offset": 6153656,
+      "length": 35309
+    },
+    {
+      "name": "msbm7.tfm",
+      "offset": 6188965,
+      "length": 940
+    },
+    {
+      "name": "msbm8.pfb",
+      "offset": 6189905,
+      "length": 39445
+    },
+    {
+      "name": "msbm8.tfm",
+      "offset": 6229350,
+      "length": 940
+    },
+    {
+      "name": "msbm9.pfb",
+      "offset": 6230290,
+      "length": 34770
+    },
+    {
+      "name": "msbm9.tfm",
+      "offset": 6265060,
+      "length": 940
+    },
+    {
+      "name": "newlfont.sty",
+      "offset": 6266000,
+      "length": 2911
+    },
+    {
+      "name": "next.def",
+      "offset": 6268911,
+      "length": 6708
+    },
+    {
+      "name": "oldlfont.sty",
+      "offset": 6275619,
+      "length": 3450
+    },
+    {
+      "name": "omlcmm.fd",
+      "offset": 6279069,
+      "length": 2332
+    },
+    {
+      "name": "omlcmr.fd",
+      "offset": 6281401,
+      "length": 2470
+    },
+    {
+      "name": "omlenc.def",
+      "offset": 6283871,
+      "length": 1947
+    },
+    {
+      "name": "omllcmm.fd",
+      "offset": 6285818,
+      "length": 2242
+    },
+    {
+      "name": "omscmr.fd",
+      "offset": 6288060,
+      "length": 2469
+    },
+    {
+      "name": "omscmsy.fd",
+      "offset": 6290529,
+      "length": 2262
+    },
+    {
+      "name": "omsenc.def",
+      "offset": 6292791,
+      "length": 2739
+    },
+    {
+      "name": "omslcmsy.fd",
+      "offset": 6295530,
+      "length": 2246
+    },
+    {
+      "name": "omxcmex.fd",
+      "offset": 6297776,
+      "length": 2040
+    },
+    {
+      "name": "omxlcmex.fd",
+      "offset": 6299816,
+      "length": 2149
+    },
+    {
+      "name": "openbib.sty",
+      "offset": 6301965,
+      "length": 1921
+    },
+    {
+      "name": "ot1cmdh.fd",
+      "offset": 6303886,
+      "length": 2059
+    },
+    {
+      "name": "ot1cmfib.fd",
+      "offset": 6305945,
+      "length": 2062
+    },
+    {
+      "name": "ot1cmfr.fd",
+      "offset": 6308007,
+      "length": 2121
+    },
+    {
+      "name": "ot1cmr.fd",
+      "offset": 6310128,
+      "length": 3705
+    },
+    {
+      "name": "ot1cmss.fd",
+      "offset": 6313833,
+      "length": 3152
+    },
+    {
+      "name": "ot1cmtt.fd",
+      "offset": 6316985,
+      "length": 2909
+    },
+    {
+      "name": "ot1cmvtt.fd",
+      "offset": 6319894,
+      "length": 2271
+    },
+    {
+      "name": "ot1enc.def",
+      "offset": 6322165,
+      "length": 4781
+    },
+    {
+      "name": "ot1lcmss.fd",
+      "offset": 6326946,
+      "length": 2997
+    },
+    {
+      "name": "ot1lcmtt.fd",
+      "offset": 6329943,
+      "length": 2487
+    },
+    {
+      "name": "ot4enc.def",
+      "offset": 6332430,
+      "length": 4782
+    },
+    {
+      "name": "pctex32.def",
+      "offset": 6337212,
+      "length": 4456
+    },
+    {
+      "name": "pctexhp.def",
+      "offset": 6341668,
+      "length": 1253
+    },
+    {
+      "name": "pctexps.def",
+      "offset": 6342921,
+      "length": 3988
+    },
+    {
+      "name": "pctexwin.def",
+      "offset": 6346909,
+      "length": 2530
+    },
+    {
+      "name": "pdftex.def",
+      "offset": 6349439,
+      "length": 19626
+    },
+    {
+      "name": "pdftexcmds.sty",
+      "offset": 6369065,
+      "length": 20089
+    },
+    {
+      "name": "preload.cfg",
+      "offset": 6389154,
+      "length": 1977
+    },
+    {
+      "name": "proc.cls",
+      "offset": 6391131,
+      "length": 3991
+    },
+    {
+      "name": "proc.sty",
+      "offset": 6395122,
+      "length": 3807
+    },
+    {
+      "name": "report.cls",
+      "offset": 6398929,
+      "length": 23203
+    },
+    {
+      "name": "report.sty",
+      "offset": 6422132,
+      "length": 1734
+    },
+    {
+      "name": "rotating.sty",
+      "offset": 6423866,
+      "length": 7280
+    },
+    {
+      "name": "sfonts.def",
+      "offset": 6431146,
+      "length": 1600
+    },
+    {
+      "name": "shortvrb.sty",
+      "offset": 6432746,
+      "length": 4143
+    },
+    {
+      "name": "showidx.sty",
+      "offset": 6436889,
+      "length": 3366
+    },
+    {
+      "name": "size10.clo",
+      "offset": 6440255,
+      "length": 8448
+    },
+    {
+      "name": "size11.clo",
+      "offset": 6448703,
+      "length": 8464
+    },
+    {
+      "name": "size12.clo",
+      "offset": 6457167,
+      "length": 8449
+    },
+    {
+      "name": "slides.cls",
+      "offset": 6465616,
+      "length": 16728
+    },
+    {
+      "name": "slides.def",
+      "offset": 6482344,
+      "length": 18255
+    },
+    {
+      "name": "slides.sty",
+      "offset": 6500599,
+      "length": 1734
+    },
+    {
+      "name": "source2edoc.cls",
+      "offset": 6502333,
+      "length": 7203
+    },
+    {
+      "name": "structuredlog.sty",
+      "offset": 6509536,
+      "length": 2786
+    },
+    {
+      "name": "symbols.map",
+      "offset": 6512322,
+      "length": 588
+    },
+    {
+      "name": "syntonly.sty",
+      "offset": 6512910,
+      "length": 2841
+    },
+    {
+      "name": "t1cmdh.fd",
+      "offset": 6515751,
+      "length": 2170
+    },
+    {
+      "name": "t1cmfib.fd",
+      "offset": 6517921,
+      "length": 2211
+    },
+    {
+      "name": "t1cmfr.fd",
+      "offset": 6520132,
+      "length": 2204
+    },
+    {
+      "name": "t1cmr.fd",
+      "offset": 6522336,
+      "length": 2569
+    },
+    {
+      "name": "t1cmss.fd",
+      "offset": 6524905,
+      "length": 2641
+    },
+    {
+      "name": "t1cmtt.fd",
+      "offset": 6527546,
+      "length": 2443
+    },
+    {
+      "name": "t1cmvtt.fd",
+      "offset": 6529989,
+      "length": 2229
+    },
+    {
+      "name": "t1enc.def",
+      "offset": 6532218,
+      "length": 11012
+    },
+    {
+      "name": "t1enc.sty",
+      "offset": 6543230,
+      "length": 1797
+    },
+    {
+      "name": "t1lcmss.fd",
+      "offset": 6545027,
+      "length": 3213
+    },
+    {
+      "name": "t1lcmtt.fd",
+      "offset": 6548240,
+      "length": 2361
+    },
+    {
+      "name": "tcidvi.def",
+      "offset": 6550601,
+      "length": 4861
+    },
+    {
+      "name": "texsys.cfg",
+      "offset": 6555462,
+      "length": 8067
+    },
+    {
+      "name": "textcomp-2018-08-11.sty",
+      "offset": 6563529,
+      "length": 16112
+    },
+    {
+      "name": "textcomp.sty",
+      "offset": 6579641,
+      "length": 2846
+    },
+    {
+      "name": "tracefnt.sty",
+      "offset": 6582487,
+      "length": 10429
+    },
+    {
+      "name": "trig.sty",
+      "offset": 6592916,
+      "length": 4023
+    },
+    {
+      "name": "truetex.def",
+      "offset": 6596939,
+      "length": 3595
+    },
+    {
+      "name": "ts1cmr.fd",
+      "offset": 6600534,
+      "length": 2466
+    },
+    {
+      "name": "ts1cmss.fd",
+      "offset": 6603000,
+      "length": 2411
+    },
+    {
+      "name": "ts1cmtt.fd",
+      "offset": 6605411,
+      "length": 2324
+    },
+    {
+      "name": "ts1cmvtt.fd",
+      "offset": 6607735,
+      "length": 2274
+    },
+    {
+      "name": "ts1enc.def",
+      "offset": 6610009,
+      "length": 8090
+    },
+    {
+      "name": "tuenc.def",
+      "offset": 6618099,
+      "length": 26445
+    },
+    {
+      "name": "tulmdh.fd",
+      "offset": 6644544,
+      "length": 2274
+    },
+    {
+      "name": "tulmr.fd",
+      "offset": 6646818,
+      "length": 4822
+    },
+    {
+      "name": "tulmss.fd",
+      "offset": 6651640,
+      "length": 3663
+    },
+    {
+      "name": "tulmssq.fd",
+      "offset": 6655303,
+      "length": 2744
+    },
+    {
+      "name": "tulmtt.fd",
+      "offset": 6658047,
+      "length": 4574
+    },
+    {
+      "name": "tulmvtt.fd",
+      "offset": 6662621,
+      "length": 3390
+    },
+    {
+      "name": "ucmr.fd",
+      "offset": 6666011,
+      "length": 3680
+    },
+    {
+      "name": "ucmss.fd",
+      "offset": 6669691,
+      "length": 3134
+    },
+    {
+      "name": "ucmtt.fd",
+      "offset": 6672825,
+      "length": 2877
+    },
+    {
+      "name": "ueuex.fd",
+      "offset": 6675702,
+      "length": 1001
+    },
+    {
+      "name": "ueuf.fd",
+      "offset": 6676703,
+      "length": 1047
+    },
+    {
+      "name": "ueur.fd",
+      "offset": 6677750,
+      "length": 1065
+    },
+    {
+      "name": "ueus.fd",
+      "offset": 6678815,
+      "length": 1063
+    },
+    {
+      "name": "ulasy.fd",
+      "offset": 6679878,
+      "length": 2233
+    },
+    {
+      "name": "ullasy.fd",
+      "offset": 6682111,
+      "length": 2189
+    },
+    {
+      "name": "umsa.fd",
+      "offset": 6684300,
+      "length": 961
+    },
+    {
+      "name": "umsb.fd",
+      "offset": 6685261,
+      "length": 961
+    },
+    {
+      "name": "utf8-2018.def",
+      "offset": 6686222,
+      "length": 9916
+    },
+    {
+      "name": "utf8.def",
+      "offset": 6696138,
+      "length": 11506
+    },
+    {
+      "name": "wncyb10.pfb",
+      "offset": 6707644,
+      "length": 37781
+    },
+    {
+      "name": "wncyb10.tfm",
+      "offset": 6745425,
+      "length": 1588
+    },
+    {
+      "name": "wncyb5.tfm",
+      "offset": 6747013,
+      "length": 1600
+    },
+    {
+      "name": "wncyb6.tfm",
+      "offset": 6748613,
+      "length": 1600
+    },
+    {
+      "name": "wncyb7.tfm",
+      "offset": 6750213,
+      "length": 1600
+    },
+    {
+      "name": "wncyb8.tfm",
+      "offset": 6751813,
+      "length": 1596
+    },
+    {
+      "name": "wncyb9.tfm",
+      "offset": 6753409,
+      "length": 1596
+    },
+    {
+      "name": "wncyi10.pfb",
+      "offset": 6755005,
+      "length": 42244
+    },
+    {
+      "name": "wncyi10.tfm",
+      "offset": 6797249,
+      "length": 1652
+    },
+    {
+      "name": "wncyi5.tfm",
+      "offset": 6798901,
+      "length": 1676
+    },
+    {
+      "name": "wncyi6.tfm",
+      "offset": 6800577,
+      "length": 1656
+    },
+    {
+      "name": "wncyi7.tfm",
+      "offset": 6802233,
+      "length": 1668
+    },
+    {
+      "name": "wncyi8.tfm",
+      "offset": 6803901,
+      "length": 1672
+    },
+    {
+      "name": "wncyi9.tfm",
+      "offset": 6805573,
+      "length": 1648
+    },
+    {
+      "name": "wncyr10.pfb",
+      "offset": 6807221,
+      "length": 40110
+    },
+    {
+      "name": "wncyr10.tfm",
+      "offset": 6847331,
+      "length": 1560
+    },
+    {
+      "name": "wncyr5.tfm",
+      "offset": 6848891,
+      "length": 1556
+    },
+    {
+      "name": "wncyr6.tfm",
+      "offset": 6850447,
+      "length": 1564
+    },
+    {
+      "name": "wncyr7.tfm",
+      "offset": 6852011,
+      "length": 1556
+    },
+    {
+      "name": "wncyr8.tfm",
+      "offset": 6853567,
+      "length": 1560
+    },
+    {
+      "name": "wncyr9.tfm",
+      "offset": 6855127,
+      "length": 1560
+    },
+    {
+      "name": "wncysc10.pfb",
+      "offset": 6856687,
+      "length": 39820
+    },
+    {
+      "name": "wncysc10.tfm",
+      "offset": 6896507,
+      "length": 1524
+    },
+    {
+      "name": "wncyss10.pfb",
+      "offset": 6898031,
+      "length": 21783
+    },
+    {
+      "name": "wncyss10.tfm",
+      "offset": 6919814,
+      "length": 1580
+    },
+    {
+      "name": "wncyss8.tfm",
+      "offset": 6921394,
+      "length": 1564
+    },
+    {
+      "name": "wncyss9.tfm",
+      "offset": 6922958,
+      "length": 1596
+    },
+    {
+      "name": "xetex.def",
+      "offset": 6924554,
+      "length": 14788
+    },
+    {
+      "name": "pdftex.map",
+      "offset": 6939342,
+      "length": 3174
+    }
+  ]
+}
