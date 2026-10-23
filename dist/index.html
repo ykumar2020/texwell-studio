@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="TeXwell Studio — a student-friendly LaTeX learning and compilation workspace prototype.">
+  <title>TeXwell Studio — LaTeX without the guesswork</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TeXwell Studio home">
+      <span class="brand-mark" aria-hidden="true">T<sup>x</sup></span>
+      <span><strong>TeXwell</strong><small>STUDENT LATEX STUDIO</small></span>
+    </a>
+    <div class="project-title">
+      <button class="icon-button mobile-files" aria-label="Open project files" title="Project files">☰</button>
+      <div><strong>Research Methods — Assignment 2</strong><span id="saveState">All changes saved locally</span></div>
+    </div>
+    <nav class="top-actions" aria-label="Project actions">
+      <button class="quiet" id="shareBtn">Invite</button>
+      <button class="compile" id="compileBtn"><span aria-hidden="true">▶</span> Compile PDF <kbd>Ctrl ↵</kbd></button>
+      <button class="avatar" aria-label="Account menu">YK</button>
+    </nav>
+  </header>
+
+  <main class="workspace">
+    <aside class="file-panel" aria-label="Project files">
+      <div class="panel-heading"><div><span class="eyebrow">PROJECT</span><strong>Files</strong></div><button class="icon-button" id="newFileBtn" title="New file" aria-label="Create new file">＋</button></div>
+      <label class="file-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="Find a file" aria-label="Find a file"></label>
+      <div class="file-tree" role="tree">
+        <button class="tree-row active" data-file="main.tex" role="treeitem"><span class="tex-icon">T</span><span>main.tex</span><i>●</i></button>
+        <button class="tree-row" data-file="references.bib" role="treeitem"><span class="bib-icon">B</span><span>references.bib</span></button>
+        <button class="tree-row" data-file="notes.tex" role="treeitem"><span class="tex-icon">T</span><span>notes.tex</span></button>
+        <button class="tree-row folder" data-file="figures" role="treeitem" aria-expanded="true"><span>⌄</span><span>figures</span></button>
+        <button class="tree-row child" data-file="diagram.png" role="treeitem"><span class="image-icon">▧</span><span>diagram.png</span></button>
+      </div>
+      <div class="project-health">
+        <div><span>Project health</span><strong id="healthText">Ready to compile</strong></div>
+        <div class="health-meter"><i id="healthMeter"></i></div>
+        <small>Stored in this browser for the prototype.</small>
+      </div>
+    </aside>
+
+    <section class="editor-panel" aria-label="LaTeX source editor">
+      <div class="tabbar">
+        <button class="doc-tab active"><span class="tex-icon">T</span><span id="activeFileName">main.tex</span><i>×</i></button>
+        <button class="add-tab" aria-label="Open file">＋</button>
+        <div class="editor-tools"><button id="wrapBtn" aria-pressed="true">Wrap</button><button id="guideBtn" aria-pressed="true">Guide on</button><button aria-label="More editor options">•••</button></div>
+      </div>
+      <div class="editor-stage">
+        <div class="line-numbers" id="lineNumbers" aria-hidden="true"></div>
+        <textarea id="sourceEditor" spellcheck="false" aria-label="LaTeX source code"></textarea>
+        <aside class="learning-guide" id="learningGuide" aria-label="LaTeX learning guide">
+          <button id="closeGuide" aria-label="Close learning guide">×</button>
+          <span class="eyebrow">LIVE GUIDE</span>
+          <strong id="guideTitle">Document setup</strong>
+          <p id="guideCopy">The preamble chooses the document type and loads packages before your content begins.</p>
+          <button class="guide-action" id="insertExample">Insert an example</button>
+        </aside>
+      </div>
+      <footer class="statusbar"><span><i class="status-dot"></i> LaTeX</span><span>UTF-8</span><span id="cursorPosition">Ln 1, Col 1</span><span class="spacer"></span><span>Spaces: 2</span><span>Autosave</span></footer>
+    </section>
+
+    <section class="preview-panel" aria-label="Compiled PDF preview">
+      <div class="preview-toolbar">
+        <div class="view-toggle" role="tablist"><button class="active" id="pdfTab" role="tab" aria-selected="true">PDF preview</button><button id="logTab" role="tab" aria-selected="false">Compiler log <b id="issueCount">0</b></button></div>
+        <div class="preview-actions"><button aria-label="Zoom out" id="zoomOut">−</button><span id="zoomLabel">92%</span><button aria-label="Zoom in" id="zoomIn">＋</button><button aria-label="Download PDF" id="downloadBtn">⇩</button></div>
+      </div>
+      <div class="compile-progress" id="compileProgress"><i></i><span>Building your document…</span></div>
+      <div class="pdf-canvas" id="pdfView">
+        <article class="paper" id="paper">
+          <header><h1 id="paperTitle">A Small Study of Reliable Evidence</h1><p id="paperAuthor">Student Name</p><p class="paper-date">October 23, 2026</p></header>
+          <h2>1&nbsp;&nbsp;Introduction</h2>
+          <p>This document is ready to become your paper. Edit the source on the left, then compile to update this preview.</p>
+          <div class="paper-figure"><div class="mini-diagram"><i>A</i><span>observe</span><i>B</i><span>compare</span><i>C</i></div><small>Figure 1: A simple evidence pipeline.</small></div>
+          <h2>2&nbsp;&nbsp;Method</h2>
+          <p>We compare independent observations and report uncertainty explicitly.</p>
+          <p class="equation">P(H | E) ∝ P(E | H) P(H)</p>
+          <h2>3&nbsp;&nbsp;Conclusion</h2>
+          <p>The result is reproducible when the source, data, and assumptions remain traceable.</p>
+          <p class="page-number">1</p>
+        </article>
+      </div>
+      <div class="log-view" id="logView" hidden>
+        <div class="log-summary success" id="logSummary"><span>✓</span><div><strong>Compilation successful</strong><small>PDF produced in 0.8 seconds</small></div></div>
+        <div class="log-help"><span class="eyebrow">STUDENT TRANSLATION</span><h3 id="logTitle">Everything looks good.</h3><p id="logExplanation">No errors were found. Warnings will appear here with a plain-language explanation and a suggested fix.</p><button id="jumpToIssue" hidden>Jump to the problem</button></div>
+        <pre id="rawLog">This is pdfTeX, Version 3.141592653
+entering extended mode
+(./main.tex
+Output written on main.pdf (1 page).
+Transcript written on main.log.</pre>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="shareDialog"><button class="dialog-close" aria-label="Close">×</button><span class="eyebrow">CLASSROOM COLLABORATION</span><h2>Invite a classmate or instructor</h2><p>This prototype keeps sharing conceptual. A future version can support view, comment, and edit roles.</p><div class="fake-input"><span>student@university.edu</span><button>Send invite</button></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
