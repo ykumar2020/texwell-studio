@@ -1,0 +1,12 @@
+%% TeXwell Math Tools -- clean-room common extensions over AMS math
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-mathtools}[2026/10/23 v0.1 TeXwell math tools]
+\RequirePackage{amsmath}
+\providecommand\coloneqq{\mathrel{\mathop:}=}
+\providecommand\eqqcolon{=\mathrel{\mathop:}}
+\providecommand\mathclap{\mathpalette\tw@mathclap{}}
+\def\tw@mathclap#1#2{\makebox[0pt][c]{$#1#2$}}
+\providecommand\DeclarePairedDelimiter[3]{\def#1{\@ifstar{\tw@paired{#2}{#3}}{\tw@paired{#2}{#3}}}}
+\def\tw@paired#1#2#3{\left#1#3\right#2}
+\endinput

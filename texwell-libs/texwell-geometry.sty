@@ -1,0 +1,27 @@
+%% TeXwell Geometry -- clean-room common page-layout compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-geometry}[2026/10/23 v0.1 TeXwell page layout]
+\newdimen\tw@left \newdimen\tw@right \newdimen\tw@top \newdimen\tw@bottom
+\tw@left=1in \tw@right=1in \tw@top=1in \tw@bottom=1in
+\def\tw@setmargin#1{\tw@left=#1\relax\tw@right=#1\relax\tw@top=#1\relax\tw@bottom=#1\relax}
+\def\tw@parse#1=#2\@nil{\def\tw@key{#1}\def\tw@value{#2}%
+  \def\tw@test{margin}\ifx\tw@key\tw@test\tw@setmargin{#2}\fi
+  \def\tw@test{left}\ifx\tw@key\tw@test\tw@left=#2\relax\fi
+  \def\tw@test{right}\ifx\tw@key\tw@test\tw@right=#2\relax\fi
+  \def\tw@test{top}\ifx\tw@key\tw@test\tw@top=#2\relax\fi
+  \def\tw@test{bottom}\ifx\tw@key\tw@test\tw@bottom=#2\relax\fi}
+\DeclareOption{a4paper}{\paperwidth=210mm\paperheight=297mm}
+\DeclareOption{letterpaper}{\paperwidth=8.5in\paperheight=11in}
+\DeclareOption{landscape}{\@tempdima=\paperwidth\paperwidth=\paperheight\paperheight=\@tempdima}
+\DeclareOption*{\edef\tw@next{\noexpand\tw@parse\CurrentOption\noexpand\@nil}\tw@next}
+\ProcessOptions\relax
+\newcommand\tw@applygeometry{%
+  \textwidth=\paperwidth \advance\textwidth by -\tw@left \advance\textwidth by -\tw@right
+  \textheight=\paperheight \advance\textheight by -\tw@top \advance\textheight by -\tw@bottom
+  \oddsidemargin=\tw@left \advance\oddsidemargin by -1in
+  \evensidemargin=\oddsidemargin
+  \topmargin=\tw@top \advance\topmargin by -1in \advance\topmargin by -\headheight \advance\topmargin by -\headsep}
+\tw@applygeometry
+\newcommand\geometry[1]{\@for\tw@option:=#1\do{\edef\tw@next{\noexpand\tw@parse\tw@option\noexpand\@nil}\tw@next}\tw@applygeometry}
+\endinput

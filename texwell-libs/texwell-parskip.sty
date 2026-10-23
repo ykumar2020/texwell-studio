@@ -1,0 +1,9 @@
+%% TeXwell Paragraph Spacing -- clean-room common parskip compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-parskip}[2026/10/23 v0.1 TeXwell paragraph spacing]
+\DeclareOption*{}
+\ProcessOptions\relax
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.6\baselineskip plus 2pt minus 1pt}
+\endinput

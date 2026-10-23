@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/(tex-core.bundle|tex-core-index.json)",
+      "source": "/(tex-core.bundle|tex-core-index.json|texwell-libs.bundle|texwell-libs-index.json)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]

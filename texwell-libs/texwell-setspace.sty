@@ -1,0 +1,12 @@
+%% TeXwell Setspace -- clean-room line-spacing compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-setspace}[2026/10/23 v0.1 TeXwell line spacing]
+\newcommand\setstretch[1]{\renewcommand\baselinestretch{#1}\selectfont}
+\newcommand\singlespacing{\setstretch{1}}
+\newcommand\onehalfspacing{\setstretch{1.25}}
+\newcommand\doublespacing{\setstretch{1.667}}
+\newenvironment{singlespace}{\begingroup\singlespacing}{\par\endgroup}
+\newenvironment{onehalfspace}{\begingroup\onehalfspacing}{\par\endgroup}
+\newenvironment{doublespace}{\begingroup\doublespacing}{\par\endgroup}
+\endinput

@@ -1,0 +1,10 @@
+%% TeXwell Caption -- clean-room common caption compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-caption}[2026/10/23 v0.1 TeXwell captions]
+\DeclareOption*{}
+\ProcessOptions\relax
+\providecommand\captionsetup[2][]{\relax}
+\providecommand\captionof[2]{\begingroup\def\@captype{#1}\caption{#2}\endgroup}
+\providecommand\ContinuedFloat{}
+\endinput

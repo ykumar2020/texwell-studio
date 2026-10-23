@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "bytes": 7826,
+  "aliases": {
+    "geometry": "texwell-geometry",
+    "xcolor": "texwell-xcolor",
+    "booktabs": "texwell-booktabs",
+    "hyperref": "texwell-hyperref",
+    "url": "texwell-url",
+    "fancyhdr": "texwell-fancyhdr",
+    "caption": "texwell-caption",
+    "setspace": "texwell-setspace",
+    "enumitem": "texwell-enumitem",
+    "parskip": "texwell-parskip",
+    "mathtools": "texwell-mathtools"
+  },
+  "files": [
+    {
+      "name": "mathcolor.ltx",
+      "offset": 0,
+      "length": 188
+    },
+    {
+      "name": "texwell-booktabs.sty",
+      "offset": 188,
+      "length": 726
+    },
+    {
+      "name": "texwell-caption.sty",
+      "offset": 914,
+      "length": 402
+    },
+    {
+      "name": "texwell-enumitem.sty",
+      "offset": 1316,
+      "length": 647
+    },
+    {
+      "name": "texwell-fancyhdr.sty",
+      "offset": 1963,
+      "length": 938
+    },
+    {
+      "name": "texwell-geometry.sty",
+      "offset": 2901,
+      "length": 1703
+    },
+    {
+      "name": "texwell-hyperref.sty",
+      "offset": 4604,
+      "length": 719
+    },
+    {
+      "name": "texwell-mathtools.sty",
+      "offset": 5323,
+      "length": 574
+    },
+    {
+      "name": "texwell-parskip.sty",
+      "offset": 5897,
+      "length": 351
+    },
+    {
+      "name": "texwell-setspace.sty",
+      "offset": 6248,
+      "length": 632
+    },
+    {
+      "name": "texwell-url.sty",
+      "offset": 6880,
+      "length": 278
+    },
+    {
+      "name": "texwell-xcolor.sty",
+      "offset": 7158,
+      "length": 668
+    }
+  ]
+}

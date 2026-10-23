@@ -1,0 +1,18 @@
+%% TeXwell Lists -- clean-room common list-configuration compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-enumitem}[2026/10/23 v0.1 TeXwell list compatibility]
+\DeclareOption*{}
+\ProcessOptions\relax
+\def\setlist{\@ifnextchar[{\tw@setlist@with}{\tw@setlist@plain}}
+\def\tw@setlist@with[#1]#2{}
+\def\tw@setlist@plain#1{}
+\newcommand\setitemize[1]{}
+\newcommand\setenumerate[1]{}
+\newcommand\setdescription[1]{}
+\providecommand\resume{}
+\renewcommand\labelitemi{$\bullet$}
+\renewcommand\labelitemii{$\circ$}
+\renewcommand\labelitemiii{$\diamond$}
+\renewcommand\labelitemiv{$\cdot$}
+\endinput

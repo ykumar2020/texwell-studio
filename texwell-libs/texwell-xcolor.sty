@@ -1,0 +1,18 @@
+%% TeXwell Color -- clean-room common color compatibility built on LaTeX color
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-xcolor}[2026/10/23 v0.1 TeXwell color compatibility]
+\DeclareOption*{}
+\ProcessOptions\relax
+\RequirePackage{color}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{violet}{rgb}{0.5,0,0.5}
+\definecolor{purple}{rgb}{0.5,0,0.5}
+\definecolor{brown}{rgb}{0.6,0.3,0.1}
+\definecolor{lime}{rgb}{0.5,1,0}
+\definecolor{teal}{rgb}{0,0.5,0.5}
+\definecolor{olive}{rgb}{0.5,0.5,0}
+\definecolor{pink}{rgb}{1,0.75,0.8}
+\providecommand\pagecolor[1]{\special{background #1}}
+\providecommand\nopagecolor{}
+\endinput

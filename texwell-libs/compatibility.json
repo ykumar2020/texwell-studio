@@ -1,0 +1,13 @@
+{
+  "geometry": "texwell-geometry",
+  "xcolor": "texwell-xcolor",
+  "booktabs": "texwell-booktabs",
+  "hyperref": "texwell-hyperref",
+  "url": "texwell-url",
+  "fancyhdr": "texwell-fancyhdr",
+  "caption": "texwell-caption",
+  "setspace": "texwell-setspace",
+  "enumitem": "texwell-enumitem",
+  "parskip": "texwell-parskip",
+  "mathtools": "texwell-mathtools"
+}

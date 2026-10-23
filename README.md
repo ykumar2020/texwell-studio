@@ -28,6 +28,10 @@ The site is static and can be deployed on Vercel's free Hobby tier. No backend c
 
 The vendored WebAssembly engine is from [SwiftLaTeX](https://github.com/SwiftLaTeX/SwiftLaTeX). Its matching pdfTeX format and a browser-ready TeX core bundle are served with the application, so ordinary documents no longer depend on SwiftLaTeX's unavailable legacy package endpoint. The core includes the standard article/report/book classes, Computer Modern fonts, graphics support, AMS mathematics, and their runtime dependencies. Project-specific `.sty`, `.cls`, `.bst`, and asset files can still be uploaded with the document. The compiler automatically restarts once if it detects a stale or failed worker. The compiler engine, bundled packages, and application source are open source; see `THIRD_PARTY_NOTICES.md` and the source headers for licensing details.
 
+## TeXwell Compatibility Library
+
+TeXwell includes independently written implementations for the common interfaces of `geometry`, `xcolor`, `booktabs`, `hyperref`/`url`, `fancyhdr`, `caption`, `setspace`, `enumitem`, `parskip`, and `mathtools`. During browser compilation, those familiar package requests are mapped to namespaced `texwell-*` packages. This avoids presenting modified third-party package code as TeXwell's own while letting ordinary student documents compile unchanged. The compatibility promise is deliberately scoped to the common commands listed in `texwell-libs/README.md`; unsupported package names remain untouched so users can upload the required package with their project.
+
 Before compilation, TeXwell checks every `\includegraphics` reference in the project. If an image is absent, compilation continues with a large red framed placeholder that explicitly identifies itself as a template for the missing figure and displays the missing filename. The source document is not rewritten; uploading the real asset restores the original figure automatically on the next build.
 
 ## PDF compression experiment

@@ -30,14 +30,41 @@ function command(cmd, url, src) {
   const index = JSON.parse(fs.readFileSync(path.join(projectRoot, "dist", "tex-core-index.json"), "utf8"));
   const bundle = fs.readFileSync(path.join(projectRoot, "dist", "tex-core.bundle"));
   for (const file of index.files) command("writefile", file.name, bundle.subarray(file.offset, file.offset + file.length));
+  const libsIndex = JSON.parse(fs.readFileSync(path.join(projectRoot, "dist", "texwell-libs-index.json"), "utf8"));
+  const libsBundle = fs.readFileSync(path.join(projectRoot, "dist", "texwell-libs.bundle"));
+  for (const file of libsIndex.files) command("writefile", file.name, libsBundle.subarray(file.offset, file.offset + file.length));
   command("writefile", "swiftlatexpdftex.fmt", fs.readFileSync(path.join(projectRoot, "dist", "swiftlatexpdftex.fmt")));
-  command("writefile", "main.tex", String.raw`\documentclass{article}
+  const source = String.raw`\documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor,booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{mathtools}
+\pagestyle{fancy}
+\fancyhead{TeXwell compatibility test}
+\fancyfoot{\thepage}
 \begin{document}
-Offline core test: $E=mc^2$.
-\[\int_0^1 x^2\,dx=\frac{1}{3}\]
-\end{document}`);
+\geometry{left=1in,right=1in}
+\onehalfspacing
+\textcolor{teal}{Offline core test}: $E=mc^2$. \href{https://texwell-studio.vercel.app}{TeXwell Studio}.
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\[\int_0^1 x^2\,dx=\frac{1}{3},\qquad \abs*{-3}\coloneqq 3\]
+\setlist[itemize]{leftmargin=*}
+\begin{itemize}\item Compatible list configuration.\end{itemize}
+\begin{table}[h]\centering\caption{Compatibility table}\begin{tabular}{lr}\toprule Item & Value\\\midrule Signal & 42\\\bottomrule\end{tabular}\end{table}
+\end{document}`;
+  const rewritten = source.replace(/\\usepackage(\s*\[[^\]]*\])?\s*\{([^}]+)\}/g, (match, options = "", names) => {
+    const mapped = names.split(",").map(name => libsIndex.aliases[name.trim()] || name.trim());
+    return `\\usepackage${options}{${mapped.join(",")}}`;
+  });
+  command("writefile", "main.tex", rewritten);
   command("setmainfile", "main.tex");
   const resultPromise = new Promise(resolve => { resolveCompile = resolve; });
   command("compilelatex");
@@ -46,6 +73,6 @@ Offline core test: $E=mc^2$.
     console.error(result.log);
     process.exitCode = 1;
   } else {
-    console.log(`SwiftLaTeX core test passed (${result.pdf.byteLength} PDF bytes).`);
+    console.log(`SwiftLaTeX core + TeXwell libraries test passed (${result.pdf.byteLength} PDF bytes).`);
   }
 })().catch(error => { console.error(error); process.exitCode = 1; });

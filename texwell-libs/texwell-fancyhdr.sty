@@ -1,0 +1,17 @@
+%% TeXwell Fancy Headers -- clean-room common header/footer compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-fancyhdr}[2026/10/23 v0.1 TeXwell headers and footers]
+\newcommand\headrulewidth{0.4pt}
+\def\tw@fancyhead{} \def\tw@fancyfoot{\thepage}
+\newcommand\fancyhf[1]{\gdef\tw@fancyhead{}\gdef\tw@fancyfoot{}}
+\newcommand\fancyhead[2][]{\gdef\tw@fancyhead{#2}}
+\newcommand\fancyfoot[2][]{\gdef\tw@fancyfoot{#2}}
+\newcommand\lhead[1]{\fancyhead[L]{#1}} \newcommand\chead[1]{\fancyhead[C]{#1}} \newcommand\rhead[1]{\fancyhead[R]{#1}}
+\newcommand\lfoot[1]{\fancyfoot[L]{#1}} \newcommand\cfoot[1]{\fancyfoot[C]{#1}} \newcommand\rfoot[1]{\fancyfoot[R]{#1}}
+\def\ps@fancy{%
+  \def\@oddhead{\tw@fancyhead\hfil}%
+  \let\@evenhead\@oddhead
+  \def\@oddfoot{\hfil\tw@fancyfoot\hfil}\let\@evenfoot\@oddfoot}
+\newcommand\fancypagestyle[2]{\expandafter\def\csname ps@#1\endcsname{#2}}
+\endinput

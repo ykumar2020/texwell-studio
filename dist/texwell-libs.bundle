@@ -1,0 +1,164 @@
+%% TeXwell minimal math-color bridge for the bundled LaTeX color runtime
+%% SPDX-License-Identifier: AGPL-3.0-only
+\providecommand\mathcolor[2]{\begingroup\color{#1}#2\endgroup}
+\endinput
+%% TeXwell Booktabs -- clean-room table-rule compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-booktabs}[2026/10/23 v0.1 TeXwell table rules]
+\newdimen\heavyrulewidth \newdimen\lightrulewidth \newdimen\cmidrulewidth
+\heavyrulewidth=.08em \lightrulewidth=.05em \cmidrulewidth=.03em
+\newcommand\toprule{\noalign{\vskip .65ex}\hline\noalign{\vskip .4ex}}
+\newcommand\midrule{\noalign{\vskip .4ex}\hline\noalign{\vskip .4ex}}
+\newcommand\bottomrule{\noalign{\vskip .4ex}\hline\noalign{\vskip .65ex}}
+\newcommand\specialrule[3]{\noalign{\vskip #2\hrule height #1\vskip #3}}
+\newcommand\addlinespace[1][.5ex]{\noalign{\vskip #1}}
+\newcommand\cmidrule[1]{\cline{#1}}
+\endinput
+%% TeXwell Caption -- clean-room common caption compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-caption}[2026/10/23 v0.1 TeXwell captions]
+\DeclareOption*{}
+\ProcessOptions\relax
+\providecommand\captionsetup[2][]{\relax}
+\providecommand\captionof[2]{\begingroup\def\@captype{#1}\caption{#2}\endgroup}
+\providecommand\ContinuedFloat{}
+\endinput
+%% TeXwell Lists -- clean-room common list-configuration compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-enumitem}[2026/10/23 v0.1 TeXwell list compatibility]
+\DeclareOption*{}
+\ProcessOptions\relax
+\def\setlist{\@ifnextchar[{\tw@setlist@with}{\tw@setlist@plain}}
+\def\tw@setlist@with[#1]#2{}
+\def\tw@setlist@plain#1{}
+\newcommand\setitemize[1]{}
+\newcommand\setenumerate[1]{}
+\newcommand\setdescription[1]{}
+\providecommand\resume{}
+\renewcommand\labelitemi{$\bullet$}
+\renewcommand\labelitemii{$\circ$}
+\renewcommand\labelitemiii{$\diamond$}
+\renewcommand\labelitemiv{$\cdot$}
+\endinput
+%% TeXwell Fancy Headers -- clean-room common header/footer compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-fancyhdr}[2026/10/23 v0.1 TeXwell headers and footers]
+\newcommand\headrulewidth{0.4pt}
+\def\tw@fancyhead{} \def\tw@fancyfoot{\thepage}
+\newcommand\fancyhf[1]{\gdef\tw@fancyhead{}\gdef\tw@fancyfoot{}}
+\newcommand\fancyhead[2][]{\gdef\tw@fancyhead{#2}}
+\newcommand\fancyfoot[2][]{\gdef\tw@fancyfoot{#2}}
+\newcommand\lhead[1]{\fancyhead[L]{#1}} \newcommand\chead[1]{\fancyhead[C]{#1}} \newcommand\rhead[1]{\fancyhead[R]{#1}}
+\newcommand\lfoot[1]{\fancyfoot[L]{#1}} \newcommand\cfoot[1]{\fancyfoot[C]{#1}} \newcommand\rfoot[1]{\fancyfoot[R]{#1}}
+\def\ps@fancy{%
+  \def\@oddhead{\tw@fancyhead\hfil}%
+  \let\@evenhead\@oddhead
+  \def\@oddfoot{\hfil\tw@fancyfoot\hfil}\let\@evenfoot\@oddfoot}
+\newcommand\fancypagestyle[2]{\expandafter\def\csname ps@#1\endcsname{#2}}
+\endinput
+%% TeXwell Geometry -- clean-room common page-layout compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-geometry}[2026/10/23 v0.1 TeXwell page layout]
+\newdimen\tw@left \newdimen\tw@right \newdimen\tw@top \newdimen\tw@bottom
+\tw@left=1in \tw@right=1in \tw@top=1in \tw@bottom=1in
+\def\tw@setmargin#1{\tw@left=#1\relax\tw@right=#1\relax\tw@top=#1\relax\tw@bottom=#1\relax}
+\def\tw@parse#1=#2\@nil{\def\tw@key{#1}\def\tw@value{#2}%
+  \def\tw@test{margin}\ifx\tw@key\tw@test\tw@setmargin{#2}\fi
+  \def\tw@test{left}\ifx\tw@key\tw@test\tw@left=#2\relax\fi
+  \def\tw@test{right}\ifx\tw@key\tw@test\tw@right=#2\relax\fi
+  \def\tw@test{top}\ifx\tw@key\tw@test\tw@top=#2\relax\fi
+  \def\tw@test{bottom}\ifx\tw@key\tw@test\tw@bottom=#2\relax\fi}
+\DeclareOption{a4paper}{\paperwidth=210mm\paperheight=297mm}
+\DeclareOption{letterpaper}{\paperwidth=8.5in\paperheight=11in}
+\DeclareOption{landscape}{\@tempdima=\paperwidth\paperwidth=\paperheight\paperheight=\@tempdima}
+\DeclareOption*{\edef\tw@next{\noexpand\tw@parse\CurrentOption\noexpand\@nil}\tw@next}
+\ProcessOptions\relax
+\newcommand\tw@applygeometry{%
+  \textwidth=\paperwidth \advance\textwidth by -\tw@left \advance\textwidth by -\tw@right
+  \textheight=\paperheight \advance\textheight by -\tw@top \advance\textheight by -\tw@bottom
+  \oddsidemargin=\tw@left \advance\oddsidemargin by -1in
+  \evensidemargin=\oddsidemargin
+  \topmargin=\tw@top \advance\topmargin by -1in \advance\topmargin by -\headheight \advance\topmargin by -\headsep}
+\tw@applygeometry
+\newcommand\geometry[1]{\@for\tw@option:=#1\do{\edef\tw@next{\noexpand\tw@parse\tw@option\noexpand\@nil}\tw@next}\tw@applygeometry}
+\endinput
+%% TeXwell Hyperlinks -- clean-room common PDF-link compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-hyperref}[2026/10/23 v0.1 TeXwell PDF links]
+\DeclareOption*{}
+\ProcessOptions\relax
+\providecommand\hypersetup[1]{}
+\providecommand\url[1]{\texttt{\detokenize{#1}}}
+\providecommand\path[1]{\texttt{\detokenize{#1}}}
+\providecommand\href[2]{\leavevmode\pdfstartlink attr{/Border[0 0 0]} user{/Subtype/Link/A<</S/URI/URI(\pdfescapestring{#1})>>}#2\pdfendlink}
+\providecommand\urlstyle[1]{}
+\providecommand\nolinkurl[1]{\texttt{\detokenize{#1}}}
+\providecommand\autoref[1]{\ref{#1}}
+\providecommand\texorpdfstring[2]{#1}
+\providecommand\phantomsection{}
+\endinput
+%% TeXwell Math Tools -- clean-room common extensions over AMS math
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-mathtools}[2026/10/23 v0.1 TeXwell math tools]
+\RequirePackage{amsmath}
+\providecommand\coloneqq{\mathrel{\mathop:}=}
+\providecommand\eqqcolon{=\mathrel{\mathop:}}
+\providecommand\mathclap{\mathpalette\tw@mathclap{}}
+\def\tw@mathclap#1#2{\makebox[0pt][c]{$#1#2$}}
+\providecommand\DeclarePairedDelimiter[3]{\def#1{\@ifstar{\tw@paired{#2}{#3}}{\tw@paired{#2}{#3}}}}
+\def\tw@paired#1#2#3{\left#1#3\right#2}
+\endinput
+%% TeXwell Paragraph Spacing -- clean-room common parskip compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-parskip}[2026/10/23 v0.1 TeXwell paragraph spacing]
+\DeclareOption*{}
+\ProcessOptions\relax
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.6\baselineskip plus 2pt minus 1pt}
+\endinput
+%% TeXwell Setspace -- clean-room line-spacing compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-setspace}[2026/10/23 v0.1 TeXwell line spacing]
+\newcommand\setstretch[1]{\renewcommand\baselinestretch{#1}\selectfont}
+\newcommand\singlespacing{\setstretch{1}}
+\newcommand\onehalfspacing{\setstretch{1.25}}
+\newcommand\doublespacing{\setstretch{1.667}}
+\newenvironment{singlespace}{\begingroup\singlespacing}{\par\endgroup}
+\newenvironment{onehalfspace}{\begingroup\onehalfspacing}{\par\endgroup}
+\newenvironment{doublespace}{\begingroup\doublespacing}{\par\endgroup}
+\endinput
+%% TeXwell URL -- clean-room URL compatibility facade
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-url}[2026/10/23 v0.1 TeXwell URL compatibility]
+\DeclareOption*{}
+\ProcessOptions\relax
+\RequirePackage{texwell-hyperref}
+\endinput
+%% TeXwell Color -- clean-room common color compatibility built on LaTeX color
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-xcolor}[2026/10/23 v0.1 TeXwell color compatibility]
+\DeclareOption*{}
+\ProcessOptions\relax
+\RequirePackage{color}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{violet}{rgb}{0.5,0,0.5}
+\definecolor{purple}{rgb}{0.5,0,0.5}
+\definecolor{brown}{rgb}{0.6,0.3,0.1}
+\definecolor{lime}{rgb}{0.5,1,0}
+\definecolor{teal}{rgb}{0,0.5,0.5}
+\definecolor{olive}{rgb}{0.5,0.5,0}
+\definecolor{pink}{rgb}{1,0.75,0.8}
+\providecommand\pagecolor[1]{\special{background #1}}
+\providecommand\nopagecolor{}
+\endinput

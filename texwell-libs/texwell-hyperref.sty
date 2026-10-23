@@ -1,0 +1,16 @@
+%% TeXwell Hyperlinks -- clean-room common PDF-link compatibility
+%% SPDX-License-Identifier: AGPL-3.0-only
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{texwell-hyperref}[2026/10/23 v0.1 TeXwell PDF links]
+\DeclareOption*{}
+\ProcessOptions\relax
+\providecommand\hypersetup[1]{}
+\providecommand\url[1]{\texttt{\detokenize{#1}}}
+\providecommand\path[1]{\texttt{\detokenize{#1}}}
+\providecommand\href[2]{\leavevmode\pdfstartlink attr{/Border[0 0 0]} user{/Subtype/Link/A<</S/URI/URI(\pdfescapestring{#1})>>}#2\pdfendlink}
+\providecommand\urlstyle[1]{}
+\providecommand\nolinkurl[1]{\texttt{\detokenize{#1}}}
+\providecommand\autoref[1]{\ref{#1}}
+\providecommand\texorpdfstring[2]{#1}
+\providecommand\phantomsection{}
+\endinput
