@@ -28,6 +28,8 @@ The site is static and can be deployed on Vercel's free Hobby tier. No backend c
 
 The vendored WebAssembly engine is from [SwiftLaTeX](https://github.com/SwiftLaTeX/SwiftLaTeX). Its matching pdfTeX format file is bundled locally, so compiler startup does not depend on SwiftLaTeX's legacy format-file endpoint. Additional TeX packages are still retrieved on demand when a document requires them. The compiler automatically restarts once if it detects a stale or failed worker. The compiler engine and application source are open source; see `THIRD_PARTY_NOTICES.md` and the source headers for licensing details.
 
+Before compilation, TeXwell checks every `\includegraphics` reference in the project. If an image is absent, compilation continues with a large red framed placeholder that explicitly identifies itself as a template for the missing figure and displays the missing filename. The source document is not rewritten; uploading the real asset restores the original figure automatically on the next build.
+
 ## PDF compression experiment
 
 The Compression Lab performs a controlled A/B test entirely in the browser. It compiles the same LaTeX source with the same pdfTeX engine twice:
