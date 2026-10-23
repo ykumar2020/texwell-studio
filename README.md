@@ -39,7 +39,7 @@ The interface reports both output sizes, build times, bytes saved, and percentag
 
 ## Multi-file projects
 
-Use **Files** in the project sidebar—or drag files onto the sidebar—to add multiple `.tex`, `.bib`, `.sty`, `.cls`, `.bst`, PNG, JPG, JPEG, and PDF files. Use **Folder** to import an extracted LaTeX project while preserving paths such as `figures/chart.png`. Uploaded text files can be edited directly, image assets receive an in-editor preview, and every project file is copied into the browser-local pdfTeX filesystem before compilation. Select any uploaded `.tex` file and choose **Use as main** to make it the compilation entry point. Project files and the selected main document are retained locally in IndexedDB.
+Use **Files** in the project sidebar—or drag files onto the sidebar—to add multiple `.tex`, `.bib`, `.sty`, `.cls`, `.bst`, PNG, JPG, JPEG, and PDF files. Use **Folder** to import an extracted LaTeX project while preserving paths such as `figures/chart.png`. Uploaded text files can be edited directly, image assets receive an in-editor preview, and every project file is copied into the browser-local pdfTeX filesystem before compilation. Clicking **Compile PDF** opens a list of the project’s `.tex` files; choosing one makes it the main entry point and starts compilation. Project files and the selected main document are retained locally in IndexedDB.
 
 ## Dual PDF and HTML outputs
 

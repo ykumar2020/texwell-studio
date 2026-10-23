@@ -20,7 +20,13 @@
     <nav class="top-actions" aria-label="Project actions">
       <button class="quiet" id="shareBtn">Invite</button>
       <button class="quiet compression-open" id="compressionBtn">Compression lab</button>
-      <button class="compile pdf-compile" id="compileBtn" disabled><span aria-hidden="true">◌</span> PDF loading…</button>
+      <div class="compile-picker">
+        <button class="compile pdf-compile" id="compileBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="compileMenu" disabled><span aria-hidden="true">◌</span> PDF loading…</button>
+        <div class="compile-menu" id="compileMenu" role="menu" aria-label="Choose a TeX file to compile" hidden>
+          <div class="compile-menu-heading"><strong>Compile PDF</strong><span>Choose the entry file</span></div>
+          <div class="compile-choices" id="compileChoices"></div>
+        </div>
+      </div>
       <button class="compile html-compile" id="compileHtmlBtn"><span aria-hidden="true">◇</span> Build HTML</button>
       <button class="avatar" aria-label="Account menu">YK</button>
     </nav>
