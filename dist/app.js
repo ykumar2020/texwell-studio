@@ -41,7 +41,7 @@ const editor=document.querySelector("#sourceEditor"),lines=document.querySelecto
 let activeFile="main.tex",mainFile="main.tex",zoom=92,saveTimer,rootIssue=null,pdfURL=null,lastPDF=null,optimizedPDF=null,optimizedURL=null,assetPreviewURL=null,siteZipURL=null,htmlOutput=null,projectDB=null,previewAssetURLs=[];
 let latexEngine=new PdfTeXEngine(),formatFileBytes=null,formatFilePromise=null,formatInstalledEngine=null;
 editor.value=files[activeFile];
-const textExtensions=new Set(["tex","bib","sty","cls","bst","txt"]),imageExtensions=new Set(["png","jpg","jpeg"]);
+const textExtensions=new Set(["tex","bib","sty","cls","bst","txt","html"]),imageExtensions=new Set(["png","jpg","jpeg"]);
 function extension(name){return name.split(".").pop().toLowerCase()}
 function isTextFile(name){return textExtensions.has(extension(name))}
 function assetSize(value){return value instanceof Uint8Array?value.byteLength:new TextEncoder().encode(String(value)).byteLength}
@@ -131,15 +131,54 @@ document.querySelector("#insertExample").addEventListener("click",()=>{const tex
 document.querySelector("#jumpToIssue").addEventListener("click",()=>{showView("pdf");editor.focus();const target=Math.max(0,(rootIssue?.line||1)-1),pos=editor.value.split("\n").slice(0,target).join("\n").length+(target?1:0);editor.setSelectionRange(pos,pos);cursor()});
 document.querySelector("#zoomIn").addEventListener("click",()=>setZoom(zoom+8));document.querySelector("#zoomOut").addEventListener("click",()=>setZoom(zoom-8));function setZoom(n){if(lastPDF){notify("Use the PDF viewer controls to zoom the compiled document");return}zoom=Math.min(124,Math.max(68,n));document.querySelector("#zoomLabel").textContent=zoom+"%";document.querySelector("#paper").style.transform=`scale(${zoom/92})`}
 document.querySelector("#downloadBtn").addEventListener("click",()=>{if(!lastPDF){notify("Compile the document before downloading");return}const link=document.createElement("a");link.href=pdfURL;link.download=mainFile.replace(/\.tex$/i,".pdf");link.click()});
-const fileUpload=document.querySelector("#fileUpload"),folderUpload=document.querySelector("#folderUpload"),filePanel=document.querySelector(".file-panel"),allowedExtensions=new Set(["tex","bib","sty","cls","bst","png","jpg","jpeg","pdf"]);
+const fileUpload=document.querySelector("#fileUpload"),folderUpload=document.querySelector("#folderUpload"),filePanel=document.querySelector(".file-panel"),allowedExtensions=new Set(["tex","bib","sty","cls","bst","txt","html","png","jpg","jpeg","pdf"]);
 function projectPath(file){const relative=file.webkitRelativePath||file.name,parts=relative.split(/[\\/]/).filter(part=>part&&part!=="."&&part!=="..");if(file.webkitRelativePath&&parts.length>1)parts.shift();return parts.join("/")}
 async function importFiles(fileList){const incoming=[...fileList];if(!incoming.length)return;let imported=0,lastName="";for(const file of incoming){const name=projectPath(file),ext=extension(name);if(!allowedExtensions.has(ext))continue;if(file.size>25*1024*1024){notify(`${file.name} is larger than the 25 MB browser limit`);continue}if(name in files&&!window.confirm(`${name} already exists. Replace it?`))continue;files[name]=isTextFile(name)?await file.text():new Uint8Array(await file.arrayBuffer());if(name.toLowerCase()==="main.tex")mainFile=name;imported++;lastName=name}fileUpload.value="";folderUpload.value="";renderFileTree();if(lastName)selectFile(lastName);await persistProject();notify(`${imported} file${imported===1?"":"s"} added to this project`)}
 document.querySelector("#uploadBtn").addEventListener("click",()=>fileUpload.click());document.querySelector("#folderUploadBtn").addEventListener("click",()=>folderUpload.click());document.querySelector(".add-tab").addEventListener("click",()=>fileUpload.click());fileUpload.addEventListener("change",()=>{invalidateHTML();importFiles(fileUpload.files)});folderUpload.addEventListener("change",()=>{invalidateHTML();importFiles(folderUpload.files)});
 filePanel.addEventListener("dragover",event=>{event.preventDefault();filePanel.classList.add("dragging")});filePanel.addEventListener("dragleave",()=>filePanel.classList.remove("dragging"));filePanel.addEventListener("drop",event=>{event.preventDefault();filePanel.classList.remove("dragging");invalidateHTML();importFiles(event.dataTransfer.files)});
-document.querySelector("#newFileBtn").addEventListener("click",async()=>{const requested=window.prompt("New project filename (for example, section.tex)");if(!requested)return;const name=requested.replace(/[\\/]/g,"-").trim(),ext=extension(name);if(!textExtensions.has(ext)){notify("Create a .tex, .bib, .sty, .cls, .bst, or .txt file");return}if(name in files){notify("That filename already exists");selectFile(name);return}files[name]="";invalidateHTML();renderFileTree();selectFile(name);await persistProject();notify(`${name} created`)});
+document.querySelector("#newFileBtn").addEventListener("click",async()=>{const requested=window.prompt("New project filename (for example, section.tex)");if(!requested)return;const name=requested.replace(/[\\/]/g,"-").trim(),ext=extension(name);if(!textExtensions.has(ext)){notify("Create a .tex, .bib, .sty, .cls, .bst, .txt, or .html file");return}if(name in files){notify("That filename already exists");selectFile(name);return}files[name]="";invalidateHTML();renderFileTree();selectFile(name);await persistProject();notify(`${name} created`)});
 document.querySelector("#setMainBtn").addEventListener("click",async()=>{if(extension(activeFile)!=="tex")return;if(isTextFile(activeFile))files[activeFile]=editor.value;mainFile=activeFile;invalidateHTML();renderFileTree();selectFile(activeFile,true);await persistProject();notify(`${mainFile} will compile as the main document`)});
 document.querySelector(".file-search input").addEventListener("input",event=>renderFileTree(event.target.value));document.querySelector(".mobile-files").addEventListener("click",()=>filePanel.classList.toggle("open"));
 const dialog=document.querySelector("#shareDialog");document.querySelector("#shareBtn").addEventListener("click",()=>dialog.showModal());document.querySelector(".dialog-close").addEventListener("click",()=>dialog.close());document.querySelector(".fake-input button").addEventListener("click",()=>{dialog.close();notify("Prototype invite created")});
+const dynamicTemplates={
+  frames:String.raw`\documentclass{article}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\newcommand{\chart}[6]{\begin{center}\Large\bfseries #1\par\vspace{18pt}\fbox{\parbox[c][8cm][b]{0.82\linewidth}{\centering\rule{1.2cm}{#2cm}\hspace{8pt}\rule{1.2cm}{#3cm}\hspace{8pt}\rule{1.2cm}{#4cm}\hspace{8pt}\rule{1.2cm}{#5cm}\hspace{8pt}\rule{1.2cm}{#6cm}\par\vspace{8pt}\small T1\hspace{30pt}T2\hspace{30pt}T3\hspace{30pt}T4\hspace{30pt}T5}}\end{center}}
+\begin{document}
+\chart{Portable frame 1 of 5}{1}{2}{3}{2}{4}\newpage
+\chart{Portable frame 2 of 5}{2}{3}{2}{4}{5}\newpage
+\chart{Portable frame 3 of 5}{3}{2}{4}{5}{3}\newpage
+\chart{Portable frame 4 of 5}{4}{4}{5}{3}{2}\newpage
+\chart{Portable frame 5 of 5}{5}{3}{2}{4}{1}
+\end{document}`,
+  animate:String.raw`\documentclass{article}
+\usepackage{animate}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\newcommand{\chart}[5]{\fbox{\parbox[c][8cm][b]{0.82\linewidth}{\centering\rule{1.2cm}{#1cm}\hspace{8pt}\rule{1.2cm}{#2cm}\hspace{8pt}\rule{1.2cm}{#3cm}\hspace{8pt}\rule{1.2cm}{#4cm}\hspace{8pt}\rule{1.2cm}{#5cm}}}}
+\begin{document}
+\begin{center}\Large\bfseries Embedded PDF animation\par\vspace{18pt}
+\begin{animateinline}[autoplay,loop,palindrome,controls]{2}
+\chart{1}{2}{3}{2}{4}\newframe
+\chart{2}{3}{2}{4}{5}\newframe
+\chart{3}{2}{4}{5}{3}\newframe
+\chart{4}{4}{5}{3}{2}\newframe
+\chart{5}{3}{2}{4}{1}
+\end{animateinline}\par\vspace{14pt}\small If motion is absent, download this PDF and test it in desktop Adobe Acrobat.
+\end{center}\end{document}`,
+  hybrid:String.raw`\documentclass{article}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\begin{document}
+\begin{center}\Large\bfseries Dynamic visualization experiment\par\vspace{18pt}
+\fbox{\parbox[c][8cm][b]{0.82\linewidth}{\centering\rule{1.2cm}{3cm}\hspace{8pt}\rule{1.2cm}{5cm}\hspace{8pt}\rule{1.2cm}{2cm}\hspace{8pt}\rule{1.2cm}{4cm}\hspace{8pt}\rule{1.2cm}{3.5cm}}}
+\par\vspace{12pt}\small Stable PDF snapshot. The deployable HTML package includes the animated companion as dynamic-visualization.html.
+\end{center}\end{document}`,
+  html:`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dynamic visualization companion</title><style>*{box-sizing:border-box}body{min-height:100vh;margin:0;display:grid;place-items:center;background:#102039;color:white;font-family:Arial,sans-serif}.panel{width:min(760px,92vw);padding:42px;border:1px solid #4d6685;background:#172a43}.chart{height:360px;display:flex;align-items:end;justify-content:center;gap:24px;border-left:2px solid #9fb3ca;border-bottom:2px solid #9fb3ca}.chart i{width:72px;height:var(--h);background:linear-gradient(#67e5d8,#ef6a5b);animation:pulse 2.6s ease-in-out infinite alternate;transform-origin:bottom}.chart i:nth-child(2){animation-delay:-.6s}.chart i:nth-child(3){animation-delay:-1.2s}.chart i:nth-child(4){animation-delay:-1.8s}.chart i:nth-child(5){animation-delay:-2.4s}@keyframes pulse{35%{transform:scaleY(.5)}75%{transform:scaleY(1.12)}}p{color:#bdd0e5}</style></head><body><main class="panel"><h1>Interactive document companion</h1><p>The PDF preserves a stable snapshot; this web artifact preserves motion.</p><div class="chart" aria-label="Animated five-bar dataset"><i style="--h:35%"></i><i style="--h:72%"></i><i style="--h:48%"></i><i style="--h:88%"></i><i style="--h:58%"></i></div></main></body></html>`
+};
+async function installDynamicApproach(approach){const filename=approach==="frames"?"dynamic-frame-sequence.tex":approach==="animate"?"dynamic-embedded-animation.tex":"dynamic-hybrid.tex";if(filename in files&&!window.confirm(`${filename} already exists. Replace it?`))return;if(isTextFile(activeFile))files[activeFile]=editor.value;files[filename]=dynamicTemplates[approach];if(approach==="hybrid")files["dynamic-visualization.html"]=dynamicTemplates.html;mainFile=filename;invalidateHTML();renderFileTree();selectFile(filename);await persistProject();dynamicDialog.close();if(approach==="hybrid"){buildHTML();notify("Hybrid PDF + animated HTML experiment added")}else{notify(`${filename} added — compiling the experiment`);compile()}}
+const dynamicDialog=document.querySelector("#dynamicDialog");document.querySelector("#dynamicBtn").addEventListener("click",()=>dynamicDialog.showModal());document.querySelector("#dynamicDialog .dialog-close").addEventListener("click",()=>dynamicDialog.close());dynamicDialog.addEventListener("click",event=>{if(event.target===dynamicDialog)dynamicDialog.close()});document.querySelectorAll("[data-dynamic]").forEach(button=>button.addEventListener("click",()=>installDynamicApproach(button.dataset.dynamic)));
 const compressionDialog=document.querySelector("#compressionDialog"),runCompression=document.querySelector("#runCompression"),downloadOptimized=document.querySelector("#downloadOptimized");
 function compressionVariant(source,optimized){const cleaned=source.replace(/\\pdfcompresslevel\s*=?\s*\d+/g,"").replace(/\\pdfobjcompresslevel\s*=?\s*\d+/g,"");const controls=optimized?"\\pdfcompresslevel=9\n\\pdfobjcompresslevel=3":"\\pdfcompresslevel=0\n\\pdfobjcompresslevel=0";const documentClass=/\\documentclass(?:\[[^\]]*\])?\{[^}]+\}/;return documentClass.test(cleaned)?cleaned.replace(documentClass,match=>`${match}\n${controls}`):`${controls}\n${cleaned}`}
 function formatBytes(bytes){if(!Number.isFinite(bytes))return "—";if(bytes<1024)return `${bytes} B`;return `${(bytes/1024).toFixed(bytes<10240?1:0)} KB`}

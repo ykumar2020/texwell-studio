@@ -47,6 +47,10 @@ Use **Files** in the project sidebar—or drag files onto the sidebar—to add m
 
 **Compile PDF** runs the browser-local pdfTeX engine. **Build HTML** converts the selected main document into a responsive web edition with a separate preview. The HTML converter expands local `\input` and `\include` files, carries referenced images and PDFs into the result, and exposes a project-artifact index. **ZIP** downloads a deployable static-site package containing `index.html`, `DEPLOY.txt`, and the complete project file tree. The package requires no TeX installation or application server after generation and can be hosted by any ordinary static web server.
 
+## Dynamic visualization experiments
+
+The **Dynamic PDF lab** creates three comparable demonstrations: a universally readable multi-page PDF frame sequence, a single-page animation built with LaTeX's `animate` package, and a stable PDF paired with an animated HTML companion. This deliberately exposes the compatibility tradeoff: embedded PDF motion depends on the PDF viewer, while ordinary PDF pages and browser-based animation degrade predictably. Generated experiment files become normal editable project files and remain available in the exported project package.
+
 ## Status
 
 This is an early prototype. Real browser-side PDF compilation, HTML web-edition generation, deployable ZIP export, compiler logs, persistent multi-file projects, image uploads, PDF download, reproducible lossless-compression testing, and responsive layouts are implemented. Raster artifact experiments and collaboration are planned.

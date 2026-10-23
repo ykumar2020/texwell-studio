@@ -20,6 +20,7 @@
     <nav class="top-actions" aria-label="Project actions">
       <button class="quiet" id="shareBtn">Invite</button>
       <button class="quiet compression-open" id="compressionBtn">Compression lab</button>
+      <button class="quiet dynamic-open" id="dynamicBtn">Dynamic PDF lab</button>
       <div class="compile-picker">
         <button class="compile pdf-compile" id="compileBtn" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="compileMenu" disabled><span aria-hidden="true">◌</span> PDF loading…</button>
         <div class="compile-menu" id="compileMenu" role="menu" aria-label="Choose a TeX file to compile" hidden>
@@ -35,13 +36,13 @@
   <main class="workspace">
     <aside class="file-panel" aria-label="Project files">
       <div class="panel-heading"><div><span class="eyebrow">PROJECT</span><strong>Files</strong></div><div class="file-actions"><button class="upload-button" id="uploadBtn" title="Upload TeX, bibliography, style, or image files">⇧ Files</button><button class="upload-button folder-button" id="folderUploadBtn" title="Import a complete LaTeX project folder">Folder</button><button class="icon-button" id="newFileBtn" title="New text file" aria-label="Create new text file">＋</button></div></div>
-      <input id="fileUpload" type="file" multiple accept=".tex,.bib,.sty,.cls,.bst,.png,.jpg,.jpeg,.pdf" hidden>
+      <input id="fileUpload" type="file" multiple accept=".tex,.bib,.sty,.cls,.bst,.txt,.html,.png,.jpg,.jpeg,.pdf" hidden>
       <input id="folderUpload" type="file" webkitdirectory directory multiple hidden>
       <label class="file-search"><span aria-hidden="true">⌕</span><input type="search" placeholder="Find a file" aria-label="Find a file"></label>
       <div class="file-tree" role="tree">
         <button class="tree-row active" data-file="main.tex" role="treeitem"><span class="tex-icon">T</span><span>main.tex</span><i class="main-badge">MAIN</i></button>
       </div>
-      <p class="upload-hint">Drop files here or upload multiple `.tex`, `.bib`, `.sty`, `.cls`, PNG, JPG, and PDF assets.</p>
+      <p class="upload-hint">Drop files here or upload TeX sources, HTML companions, bibliography, style, image, and PDF assets.</p>
       <div class="project-health">
         <div><span>Project health</span><strong id="healthText">Ready to compile</strong></div>
         <div class="health-meter"><i id="healthMeter"></i></div>
@@ -106,6 +107,20 @@ Transcript written on main.log.</pre>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="shareDialog"><button class="dialog-close" aria-label="Close">×</button><span class="eyebrow">CLASSROOM COLLABORATION</span><h2>Invite a classmate or instructor</h2><p>This prototype keeps sharing conceptual. A future version can support view, comment, and edit roles.</p><div class="fake-input"><span>student@university.edu</span><button>Send invite</button></div></dialog>
+  <dialog id="dynamicDialog" class="compression-dialog dynamic-dialog">
+    <button class="dialog-close" aria-label="Close dynamic visualization lab">×</button>
+    <header class="compression-head">
+      <div><span class="eyebrow">VIEWER COMPATIBILITY EXPERIMENT</span><h2>Dynamic Document Visualization Lab</h2><p>Create the same changing dataset three ways, then test which behavior survives in your students’ PDF viewers and browsers.</p></div>
+      <span class="lab-badge">3 APPROACHES</span>
+    </header>
+    <div class="dynamic-live" aria-label="Animated data preview"><span style="--v:.35"></span><span style="--v:.72"></span><span style="--v:.48"></span><span style="--v:.88"></span><span style="--v:.58"></span></div>
+    <section class="dynamic-approaches">
+      <article><span class="approach-number">01</span><div><h3>PDF frame sequence</h3><p>Five ordinary PDF pages show successive states. It works in nearly every viewer and can be advanced manually or presented as a flipbook.</p><strong class="compatibility reliable">MOST RELIABLE</strong></div><button data-dynamic="frames">Add + compile</button></article>
+      <article><span class="approach-number">02</span><div><h3>Embedded PDF animation</h3><p>The LaTeX <code>animate</code> package places timed frames inside one page. Desktop Acrobat may play it; browser and mobile PDF viewers often will not.</p><strong class="compatibility conditional">VIEWER DEPENDENT</strong></div><button data-dynamic="animate">Add + compile</button></article>
+      <article><span class="approach-number">03</span><div><h3>PDF + HTML companion</h3><p>The PDF keeps a stable static figure while the exported website carries a responsive animated visualization. This is the strongest distribution option.</p><strong class="compatibility recommended">RECOMMENDED</strong></div><button data-dynamic="hybrid">Add + build HTML</button></article>
+    </section>
+    <div class="research-note"><span>WHAT WE MEASURE</span><p>For each route, test compilation, motion in the built-in preview, motion after download, mobile behavior, accessibility, and whether the document still communicates correctly when animation is blocked.</p></div>
+  </dialog>
   <dialog id="compressionDialog" class="compression-dialog">
     <button class="dialog-close" aria-label="Close compression lab">×</button>
     <header class="compression-head">
