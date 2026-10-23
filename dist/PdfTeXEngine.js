@@ -232,9 +232,9 @@ var PdfTeXEngine = /** @class */ (function () {
         }
     };
     PdfTeXEngine.prototype.setTexliveEndpoint = function (url) {
+        this.checkEngineStatus();
         if (this.latexWorker !== undefined) {
             this.latexWorker.postMessage({ 'cmd': 'settexliveurl', 'url': url });
-            this.latexWorker = undefined;
         }
     };
     PdfTeXEngine.prototype.closeWorker = function () {

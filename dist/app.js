@@ -38,7 +38,7 @@ const files={
   "notes.tex":`% Private notes for this assignment\n% Try one change at a time, then compile.`
 };
 const editor=document.querySelector("#sourceEditor"),lines=document.querySelector("#lineNumbers"),saveState=document.querySelector("#saveState"),compileBtn=document.querySelector("#compileBtn"),compileMenu=document.querySelector("#compileMenu"),compileChoices=document.querySelector("#compileChoices"),compileHtmlBtn=document.querySelector("#compileHtmlBtn"),progress=document.querySelector("#compileProgress"),pdfView=document.querySelector("#pdfView"),htmlView=document.querySelector("#htmlView"),logView=document.querySelector("#logView"),pdfTab=document.querySelector("#pdfTab"),htmlTab=document.querySelector("#htmlTab"),logTab=document.querySelector("#logTab"),toast=document.querySelector("#toast");
-const compilerAssetVersion="20261023-article-core-2";
+const compilerAssetVersion="20261023-article-core-3";
 let activeFile="main.tex",mainFile="main.tex",zoom=92,saveTimer,rootIssue=null,pdfURL=null,lastPDF=null,optimizedPDF=null,optimizedURL=null,assetPreviewURL=null,siteZipURL=null,htmlOutput=null,projectDB=null,previewAssetURLs=[];
 let latexEngine=new PdfTeXEngine(),formatFileBytes=null,formatFilePromise=null,formatInstalledEngine=null,coreBundle=null,coreBundlePromise=null,coreInstalledEngine=null,libsBundle=null,libsBundlePromise=null,libsInstalledEngine=null;
 editor.value=files[activeFile];
@@ -95,9 +95,11 @@ function installCoreBundle(engine,bundle){if(coreInstalledEngine===engine)return
 async function ensureLibsBundle(){if(libsBundle)return libsBundle;if(!libsBundlePromise)libsBundlePromise=Promise.all([fetch(`texwell-libs-index.json?v=${compilerAssetVersion}`,{cache:"no-cache"}),fetch(`texwell-libs.bundle?v=${compilerAssetVersion}`,{cache:"no-cache"})]).then(async([indexResponse,bundleResponse])=>{if(!indexResponse.ok||!bundleResponse.ok)throw new Error(`TeXwell libraries unavailable (${indexResponse.status}/${bundleResponse.status})`);const index=await indexResponse.json(),bytes=new Uint8Array(await bundleResponse.arrayBuffer());if(bytes.byteLength!==index.bytes)throw new Error("TeXwell libraries failed their size check");return libsBundle={index,bytes}}).catch(error=>{libsBundlePromise=null;throw error});return libsBundlePromise}
 function installLibsBundle(engine,bundle){if(libsInstalledEngine===engine)return;bundle.index.files.forEach(file=>engine.writeMemFSFile(file.name,bundle.bytes.subarray(file.offset,file.offset+file.length)));libsInstalledEngine=engine}
 function rewriteCompatibilityPackages(source,aliases){return source.replace(/\\usepackage(\s*\[[^\]]*\])?\s*\{([^}]+)\}/g,(match,options="",names)=>{const mapped=names.split(",").map(name=>aliases[name.trim()]||name.trim());return `\\usepackage${options}{${mapped.join(",")}}`})}
-async function restartCompiler(){try{latexEngine.closeWorker()}catch(error){console.warn("Old compiler worker could not close",error)}latexEngine=new PdfTeXEngine();await latexEngine.loadEngine()}
+function configureCompiler(engine){engine.setTexliveEndpoint(`${location.origin}/texlive-unavailable/`)}
+async function restartCompiler(){try{latexEngine.closeWorker()}catch(error){console.warn("Old compiler worker could not close",error)}latexEngine=new PdfTeXEngine();await latexEngine.loadEngine();configureCompiler(latexEngine)}
 function needsCompilerRecovery(log){return /can(?:not|'t) find the format file|engine crashed|engine is still spinning|LaTeX Error:\s*File\s*[`'](?:article|report|book)\.cls['`]\s*not found/i.test(log||"")}
 async function runCompileSource(source,entryFile=mainFile,allowRecovery=true){
+  configureCompiler(latexEngine);
   const started=performance.now();
   let missingFigures=[],missingSources=[];
   try{
