@@ -34,6 +34,8 @@ TeXwell includes independently written implementations for the common interfaces
 
 Before compilation, TeXwell checks every `\includegraphics` reference in the project. If an image is absent, compilation continues with a large red framed placeholder that explicitly identifies itself as a template for the missing figure and displays the missing filename. The source document is not rewritten; uploading the real asset restores the original figure automatically on the next build.
 
+TeXwell also checks braced `\input{...}` and `\include{...}` source references. A missing body source is replaced at compile time with a red, filename-labeled default panel; a missing preamble source becomes an empty default so the document can continue safely. Successful builds retain a visible warning count and list every substituted source or figure. Project files are never rewritten, so adding the missing file automatically restores the intended content on the next compilation.
+
 ## PDF compression experiment
 
 The Compression Lab performs a controlled A/B test entirely in the browser. It compiles the same LaTeX source with the same pdfTeX engine twice:

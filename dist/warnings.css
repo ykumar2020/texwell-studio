@@ -1,0 +1,8 @@
+.log-summary.warning {
+  border-color: #e6c077;
+  background: #fff9ed;
+}
+
+.log-summary.warning > span {
+  background: #d79222;
+}

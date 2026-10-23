@@ -58,6 +58,7 @@ function command(cmd, url, src) {
 \[\int_0^1 x^2\,dx=\frac{1}{3},\qquad \abs*{-3}\coloneqq 3\]
 \setlist[itemize]{leftmargin=*}
 \begin{itemize}\item Compatible list configuration.\end{itemize}
+\par\bigskip\noindent\begingroup\setlength{\fboxsep}{12pt}\pdfliteral direct {1 0 0 RG 1 0 0 rg}\fbox{\parbox{0.82\linewidth}{\centering\bfseries\Large MISSING SOURCE FILE\par\vspace{8pt}\normalfont\ttfamily\small\detokenize{chapters/results.tex}\par\vspace{8pt}\normalfont\itshape TeXwell used an empty default so this document could still compile.}}\pdfliteral direct {0 0 0 RG 0 0 0 rg}\endgroup\par\bigskip
 \begin{table}[h]\centering\caption{Compatibility table}\begin{tabular}{lr}\toprule Item & Value\\\midrule Signal & 42\\\bottomrule\end{tabular}\end{table}
 \end{document}`;
   const rewritten = source.replace(/\\usepackage(\s*\[[^\]]*\])?\s*\{([^}]+)\}/g, (match, options = "", names) => {
