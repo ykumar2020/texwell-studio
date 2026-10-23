@@ -20,7 +20,8 @@
     <nav class="top-actions" aria-label="Project actions">
       <button class="quiet" id="shareBtn">Invite</button>
       <button class="quiet compression-open" id="compressionBtn">Compression lab</button>
-      <button class="compile" id="compileBtn" disabled><span aria-hidden="true">◌</span> Loading compiler…</button>
+      <button class="compile pdf-compile" id="compileBtn" disabled><span aria-hidden="true">◌</span> PDF loading…</button>
+      <button class="compile html-compile" id="compileHtmlBtn"><span aria-hidden="true">◇</span> Build HTML</button>
       <button class="avatar" aria-label="Account menu">YK</button>
     </nav>
   </header>
@@ -65,8 +66,8 @@
 
     <section class="preview-panel" aria-label="Compiled PDF preview">
       <div class="preview-toolbar">
-        <div class="view-toggle" role="tablist"><button class="active" id="pdfTab" role="tab" aria-selected="true">PDF preview</button><button id="logTab" role="tab" aria-selected="false">Compiler log <b id="issueCount">0</b></button></div>
-        <div class="preview-actions"><button aria-label="Zoom out" id="zoomOut">−</button><span id="zoomLabel">92%</span><button aria-label="Zoom in" id="zoomIn">＋</button><button aria-label="Download PDF" id="downloadBtn">⇩</button></div>
+        <div class="view-toggle" role="tablist"><button class="active" id="pdfTab" role="tab" aria-selected="true">PDF</button><button id="htmlTab" role="tab" aria-selected="false">Web page</button><button id="logTab" role="tab" aria-selected="false">Compiler log <b id="issueCount">0</b></button></div>
+        <div class="preview-actions"><button aria-label="Zoom out" id="zoomOut">−</button><span id="zoomLabel">92%</span><button aria-label="Zoom in" id="zoomIn">＋</button><button aria-label="Download PDF" title="Download PDF" id="downloadBtn">⇩</button><button class="site-package" aria-label="Download deployable HTML package" title="Download deployable HTML package" id="downloadSiteBtn" disabled>ZIP</button></div>
       </div>
       <div class="compile-progress" id="compileProgress"><i></i><span>Building your document…</span></div>
       <div class="pdf-canvas" id="pdfView">
@@ -84,6 +85,7 @@
           <p class="page-number">1</p>
         </article>
       </div>
+      <div class="html-view" id="htmlView" hidden><iframe id="htmlPreview" title="Compiled HTML web page preview" sandbox="allow-same-origin"></iframe><div class="html-empty" id="htmlEmpty"><strong>Build the HTML version</strong><span>Your deployable web page will appear here.</span></div></div>
       <div class="log-view" id="logView" hidden>
         <div class="log-summary success" id="logSummary"><span>✓</span><div><strong>Compilation successful</strong><small>PDF produced in 0.8 seconds</small></div></div>
         <div class="log-help"><span class="eyebrow">STUDENT TRANSLATION</span><h3 id="logTitle">Everything looks good.</h3><p id="logExplanation">No errors were found. Warnings will appear here with a plain-language explanation and a suggested fix.</p><button id="jumpToIssue" hidden>Jump to the problem</button></div>

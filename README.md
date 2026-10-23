@@ -41,6 +41,10 @@ The interface reports both output sizes, build times, bytes saved, and percentag
 
 Use **Files** in the project sidebar—or drag files onto the sidebar—to add multiple `.tex`, `.bib`, `.sty`, `.cls`, `.bst`, PNG, JPG, JPEG, and PDF files. Use **Folder** to import an extracted LaTeX project while preserving paths such as `figures/chart.png`. Uploaded text files can be edited directly, image assets receive an in-editor preview, and every project file is copied into the browser-local pdfTeX filesystem before compilation. Select any uploaded `.tex` file and choose **Use as main** to make it the compilation entry point. Project files and the selected main document are retained locally in IndexedDB.
 
+## Dual PDF and HTML outputs
+
+**Compile PDF** runs the browser-local pdfTeX engine. **Build HTML** converts the selected main document into a responsive web edition with a separate preview. The HTML converter expands local `\input` and `\include` files, carries referenced images and PDFs into the result, and exposes a project-artifact index. **ZIP** downloads a deployable static-site package containing `index.html`, `DEPLOY.txt`, and the complete project file tree. The package requires no TeX installation or application server after generation and can be hosted by any ordinary static web server.
+
 ## Status
 
-This is an early prototype. Real browser-side PDF compilation, compiler logs, persistent multi-file projects, image uploads, PDF download, reproducible lossless-compression testing, and responsive layouts are implemented. Raster artifact experiments and collaboration are planned.
+This is an early prototype. Real browser-side PDF compilation, HTML web-edition generation, deployable ZIP export, compiler logs, persistent multi-file projects, image uploads, PDF download, reproducible lossless-compression testing, and responsive layouts are implemented. Raster artifact experiments and collaboration are planned.
