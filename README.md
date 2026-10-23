@@ -26,7 +26,7 @@ The site is static and can be deployed on Vercel's free Hobby tier. No backend c
 
 ## Compiler
 
-The vendored WebAssembly engine is from [SwiftLaTeX](https://github.com/SwiftLaTeX/SwiftLaTeX). Standard TeX files are retrieved on demand from the SwiftLaTeX TeX Live endpoint. The compiler engine and application source are open source; see `THIRD_PARTY_NOTICES.md` and the source headers for licensing details.
+The vendored WebAssembly engine is from [SwiftLaTeX](https://github.com/SwiftLaTeX/SwiftLaTeX). Its matching pdfTeX format file is bundled locally, so compiler startup does not depend on SwiftLaTeX's legacy format-file endpoint. Additional TeX packages are still retrieved on demand when a document requires them. The compiler automatically restarts once if it detects a stale or failed worker. The compiler engine and application source are open source; see `THIRD_PARTY_NOTICES.md` and the source headers for licensing details.
 
 ## PDF compression experiment
 

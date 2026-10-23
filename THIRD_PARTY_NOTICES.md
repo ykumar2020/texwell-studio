@@ -12,4 +12,6 @@ Upstream: <https://github.com/SwiftLaTeX/SwiftLaTeX>
 
 The upstream repository is distributed under GNU AGPL-3.0. `PdfTeXEngine.js` contains its own SPDX notice: `EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0`. The original copyright and license headers remain intact.
 
+The project also vendors `swiftlatexpdftex.fmt` from the official [SwiftLaTeX/Texlive-Ondemand](https://github.com/SwiftLaTeX/Texlive-Ondemand) repository. Bundling the matching format file prevents the compiler bootstrap from depending on the availability of the legacy on-demand service. That repository is distributed under GNU AGPL-3.0.
+
 TeX and LaTeX packages loaded by the engine retain their respective upstream licenses.
