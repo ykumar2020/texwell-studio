@@ -19,7 +19,7 @@
     </div>
     <nav class="top-actions" aria-label="Project actions">
       <button class="quiet" id="shareBtn">Invite</button>
-      <button class="compile" id="compileBtn"><span aria-hidden="true">▶</span> Compile PDF <kbd>Ctrl ↵</kbd></button>
+      <button class="compile" id="compileBtn" disabled><span aria-hidden="true">◌</span> Loading compiler…</button>
       <button class="avatar" aria-label="Account menu">YK</button>
     </nav>
   </header>
@@ -38,7 +38,8 @@
       <div class="project-health">
         <div><span>Project health</span><strong id="healthText">Ready to compile</strong></div>
         <div class="health-meter"><i id="healthMeter"></i></div>
-        <small>Stored in this browser for the prototype.</small>
+        <small>Runs locally · no account · no subscription.</small>
+        <a class="source-link" href="https://github.com/ykumar2020/texwell-studio" target="_blank" rel="noreferrer">View open-source code ↗</a>
       </div>
     </aside>
 
@@ -69,6 +70,7 @@
       </div>
       <div class="compile-progress" id="compileProgress"><i></i><span>Building your document…</span></div>
       <div class="pdf-canvas" id="pdfView">
+        <iframe class="real-pdf" id="realPdf" title="Compiled PDF" hidden></iframe>
         <article class="paper" id="paper">
           <header><h1 id="paperTitle">A Small Study of Reliable Evidence</h1><p id="paperAuthor">Student Name</p><p class="paper-date">October 23, 2026</p></header>
           <h2>1&nbsp;&nbsp;Introduction</h2>
@@ -96,6 +98,7 @@ Transcript written on main.log.</pre>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="shareDialog"><button class="dialog-close" aria-label="Close">×</button><span class="eyebrow">CLASSROOM COLLABORATION</span><h2>Invite a classmate or instructor</h2><p>This prototype keeps sharing conceptual. A future version can support view, comment, and edit roles.</p><div class="fake-input"><span>student@university.edu</span><button>Send invite</button></div></dialog>
+  <script src="PdfTeXEngine.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
