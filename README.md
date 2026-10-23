@@ -37,6 +37,10 @@ The Compression Lab performs a controlled A/B test entirely in the browser. It c
 
 The interface reports both output sizes, build times, bytes saved, and percentage reduction, and lets the student download the optimized PDF. This first profile is lossless: it compresses PDF streams and object structure without resampling text, vectors, or raster images. A later raster-image experiment will add explicit quality measurements such as PSNR, SSIM, edge preservation, and OCR/text fidelity instead of claiming that lossy artifacts are absent without measuring them.
 
+## Multi-file projects
+
+Use **Files** in the project sidebar—or drag files onto the sidebar—to add multiple `.tex`, `.bib`, `.sty`, `.cls`, `.bst`, PNG, JPG, JPEG, and PDF files. Use **Folder** to import an extracted LaTeX project while preserving paths such as `figures/chart.png`. Uploaded text files can be edited directly, image assets receive an in-editor preview, and every project file is copied into the browser-local pdfTeX filesystem before compilation. Select any uploaded `.tex` file and choose **Use as main** to make it the compilation entry point. Project files and the selected main document are retained locally in IndexedDB.
+
 ## Status
 
-This is an early prototype. Real browser-side PDF compilation, compiler logs, local persistence, PDF download, reproducible lossless-compression testing, and responsive layouts are implemented. Multi-file uploads, raster artifact experiments, and collaboration are planned.
+This is an early prototype. Real browser-side PDF compilation, compiler logs, persistent multi-file projects, image uploads, PDF download, reproducible lossless-compression testing, and responsive layouts are implemented. Raster artifact experiments and collaboration are planned.
