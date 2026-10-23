@@ -19,6 +19,7 @@
     </div>
     <nav class="top-actions" aria-label="Project actions">
       <button class="quiet" id="shareBtn">Invite</button>
+      <button class="quiet compression-open" id="compressionBtn">Compression lab</button>
       <button class="compile" id="compileBtn" disabled><span aria-hidden="true">◌</span> Loading compiler…</button>
       <button class="avatar" aria-label="Account menu">YK</button>
     </nav>
@@ -98,6 +99,27 @@ Transcript written on main.log.</pre>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="shareDialog"><button class="dialog-close" aria-label="Close">×</button><span class="eyebrow">CLASSROOM COLLABORATION</span><h2>Invite a classmate or instructor</h2><p>This prototype keeps sharing conceptual. A future version can support view, comment, and edit roles.</p><div class="fake-input"><span>student@university.edu</span><button>Send invite</button></div></dialog>
+  <dialog id="compressionDialog" class="compression-dialog">
+    <button class="dialog-close" aria-label="Close compression lab">×</button>
+    <header class="compression-head">
+      <div><span class="eyebrow">REPRODUCIBLE EXPERIMENT</span><h2>PDF Artifact Compression Lab</h2><p>Compile a baseline and an optimized variant from the same source, then compare size, timing, and artifact treatment.</p></div>
+      <span class="lab-badge">LOCAL WASM</span>
+    </header>
+    <div class="compression-flow" aria-label="Compression experiment pipeline"><span>01 SOURCE</span><i>→</i><span>02 BASELINE</span><i>→</i><span>03 OPTIMIZE</span><i>→</i><span>04 COMPARE</span></div>
+    <section class="compression-settings">
+      <div><label for="compressionMode">Compression profile</label><select id="compressionMode"><option value="lossless">Lossless structure</option><option value="balanced" disabled>Balanced images — next phase</option><option value="maximum" disabled>Maximum images — next phase</option></select><small>Uses pdfTeX stream level 9 and object-stream level 3. Text and vector graphics are unchanged.</small></div>
+      <div class="artifact-policy"><span>Artifact policy</span><strong>Preserve text + vectors</strong><small>Raster recompression will be tested separately with measurable quality thresholds.</small></div>
+    </section>
+    <button class="run-compression" id="runCompression" disabled><span>◌</span> Waiting for compiler</button>
+    <section class="compression-results" id="compressionResults" aria-live="polite">
+      <article><span>Baseline PDF</span><strong id="baselineBytes">—</strong><small id="baselineTime">Not tested</small></article>
+      <article class="optimized"><span>Optimized PDF</span><strong id="optimizedBytes">—</strong><small id="optimizedTime">Not tested</small></article>
+      <article class="savings"><span>Size reduction</span><strong id="compressionSavings">—</strong><small id="savedBytes">Run the A/B test</small></article>
+      <article><span>Visual artifacts</span><strong id="artifactStatus">None expected</strong><small>Lossless PDF structure only</small></article>
+    </section>
+    <div class="research-note"><span>WHY TWO BUILDS?</span><p>The experiment changes one factor—the PDF compression directives—while holding the LaTeX source and engine constant. This makes the result repeatable and suitable for later comparison with raster-image artifact metrics.</p></div>
+    <footer class="compression-footer"><button id="downloadOptimized" disabled>Download optimized PDF</button><button id="viewCompressionLog">View compiler log</button></footer>
+  </dialog>
   <script src="PdfTeXEngine.js"></script>
   <script src="app.js"></script>
 </body>

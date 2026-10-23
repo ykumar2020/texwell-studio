@@ -28,6 +28,15 @@ The site is static and can be deployed on Vercel's free Hobby tier. No backend c
 
 The vendored WebAssembly engine is from [SwiftLaTeX](https://github.com/SwiftLaTeX/SwiftLaTeX). Standard TeX files are retrieved on demand from the SwiftLaTeX TeX Live endpoint. The compiler engine and application source are open source; see `THIRD_PARTY_NOTICES.md` and the source headers for licensing details.
 
+## PDF compression experiment
+
+The Compression Lab performs a controlled A/B test entirely in the browser. It compiles the same LaTeX source with the same pdfTeX engine twice:
+
+- Baseline: `\pdfcompresslevel=0` and `\pdfobjcompresslevel=0`.
+- Optimized: `\pdfcompresslevel=9` and `\pdfobjcompresslevel=3`.
+
+The interface reports both output sizes, build times, bytes saved, and percentage reduction, and lets the student download the optimized PDF. This first profile is lossless: it compresses PDF streams and object structure without resampling text, vectors, or raster images. A later raster-image experiment will add explicit quality measurements such as PSNR, SSIM, edge preservation, and OCR/text fidelity instead of claiming that lossy artifacts are absent without measuring them.
+
 ## Status
 
-This is an early prototype. Real browser-side PDF compilation, compiler logs, local persistence, PDF download, and responsive layouts are implemented. Multi-file uploads and collaboration are planned.
+This is an early prototype. Real browser-side PDF compilation, compiler logs, local persistence, PDF download, reproducible lossless-compression testing, and responsive layouts are implemented. Multi-file uploads, raster artifact experiments, and collaboration are planned.
