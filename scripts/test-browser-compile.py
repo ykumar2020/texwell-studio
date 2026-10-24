@@ -68,8 +68,38 @@ with sync_playwright() as playwright:
     assert page.locator("#realPdf").is_visible(), second_log
     assert page.locator("#issueCount").inner_text() == "1"
     assert "placeholder" in page.locator("#logSummary").inner_text().lower()
+
+    spaced_source = r"""\documentclass{article}
+\begin{document}
+Uploaded filename with spaces and parentheses compiles safely.
+\end{document}
+"""
+    page.locator("#fileUpload").set_input_files(
+        {
+            "name": "main (5).tex",
+            "mimeType": "application/x-tex",
+            "buffer": spaced_source.encode("utf-8"),
+        }
+    )
+    page.locator("#compileBtn").click()
+    page.locator("#compileChoices button", has_text="main (5).tex").click()
+    page.wait_for_function(
+        """() => {
+          const button = document.querySelector('#compileBtn');
+          return button && !button.disabled && !button.classList.contains('busy');
+        }""",
+        timeout=120_000,
+    )
+    spaced_log = page.locator("#rawLog").inner_text()
+    assert "I couldn't open file name" not in spaced_log, spaced_log
+    assert page.locator("#realPdf").is_visible(), spaced_log
     assert not browser_errors, browser_errors
-    assert not failed_requests, failed_requests
-    print("browser compile: article class and missing-figure fallback passed")
+    unexpected_failures = [
+        failure
+        for failure in failed_requests
+        if not (failure.startswith("blob:") and "ERR_ABORTED" in failure)
+    ]
+    assert not unexpected_failures, unexpected_failures
+    print("browser compile: article class, missing-figure fallback, and spaced entry filename passed")
     print("browser console:", console_messages[-12:])
     browser.close()

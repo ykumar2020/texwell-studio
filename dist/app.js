@@ -38,7 +38,7 @@ const files={
   "notes.tex":`% Private notes for this assignment\n% Try one change at a time, then compile.`
 };
 const editor=document.querySelector("#sourceEditor"),lines=document.querySelector("#lineNumbers"),saveState=document.querySelector("#saveState"),compileBtn=document.querySelector("#compileBtn"),compileMenu=document.querySelector("#compileMenu"),compileChoices=document.querySelector("#compileChoices"),compileHtmlBtn=document.querySelector("#compileHtmlBtn"),progress=document.querySelector("#compileProgress"),pdfView=document.querySelector("#pdfView"),htmlView=document.querySelector("#htmlView"),logView=document.querySelector("#logView"),pdfTab=document.querySelector("#pdfTab"),htmlTab=document.querySelector("#htmlTab"),logTab=document.querySelector("#logTab"),toast=document.querySelector("#toast");
-const compilerAssetVersion="20261024-article-core-4";
+const compilerAssetVersion="20261024-safe-entry-5";
 let activeFile="main.tex",mainFile="main.tex",zoom=92,saveTimer,rootIssue=null,pdfURL=null,lastPDF=null,optimizedPDF=null,optimizedURL=null,assetPreviewURL=null,siteZipURL=null,htmlOutput=null,projectDB=null,previewAssetURLs=[];
 let latexEngine=new PdfTeXEngine(),formatFileBytes=null,formatFilePromise=null,formatInstalledEngine=null,coreBundle=null,coreBundlePromise=null,coreInstalledEngine=null,libsBundle=null,libsBundlePromise=null,libsInstalledEngine=null;
 editor.value=files[activeFile];
@@ -104,12 +104,19 @@ async function runCompileSource(source,entryFile=mainFile,allowRecovery=true){
   let missingFigures=[],missingSources=[];
   try{
     const folders=new Set(),entrySource=entryFile===activeFile&&isTextFile(activeFile)?source:files[entryFile],compileFiles={...files,[entryFile]:entrySource},[format,bundle,libs]=await Promise.all([ensureFormatFile(),ensureCoreBundle(),ensureLibsBundle()]);
+    let engineEntryFile=entryFile;
+    if(!/^[A-Za-z0-9_./-]+$/.test(entryFile)){
+      let suffix=0;
+      do{engineEntryFile=`__texwell_entry${suffix?`_${suffix}`:""}.tex`;suffix++}while(engineEntryFile in compileFiles);
+      delete compileFiles[entryFile];
+      compileFiles[engineEntryFile]=entrySource;
+    }
     if(formatInstalledEngine!==latexEngine){latexEngine.writeMemFSFile("swiftlatexpdftex.fmt",format);formatInstalledEngine=latexEngine}
     installCoreBundle(latexEngine,bundle);
     installLibsBundle(latexEngine,libs);
     Object.keys(compileFiles).forEach(name=>{const parts=name.split("/");parts.pop();let path="";parts.forEach(part=>{path=path?`${path}/${part}`:part;folders.add(path)})});
     const available=new Set([...Object.keys(compileFiles),...bundle.index.files.map(file=>file.name),...libs.index.files.map(file=>file.name)]);
-    folders.forEach(folder=>latexEngine.makeMemFSFolder(folder));Object.entries(compileFiles).forEach(([name,value])=>{if(extension(name)==="tex"&&typeof value==="string"){const figures=substituteMissingFigures(value,name),sources=substituteMissingSources(figures.source,name,available);missingFigures.push(...figures.missing.map(reference=>({reference,source:name})));missingSources.push(...sources.missing);latexEngine.writeMemFSFile(name,rewriteCompatibilityPackages(sources.source,libs.index.aliases))}else latexEngine.writeMemFSFile(name,value)});latexEngine.setEngineMainFile(entryFile);
+    folders.forEach(folder=>latexEngine.makeMemFSFolder(folder));Object.entries(compileFiles).forEach(([name,value])=>{if(extension(name)==="tex"&&typeof value==="string"){const figures=substituteMissingFigures(value,name),sources=substituteMissingSources(figures.source,name,available);missingFigures.push(...figures.missing.map(reference=>({reference,source:name})));missingSources.push(...sources.missing);latexEngine.writeMemFSFile(name,rewriteCompatibilityPackages(sources.source,libs.index.aliases))}else latexEngine.writeMemFSFile(name,value)});latexEngine.setEngineMainFile(engineEntryFile);
     const result=await latexEngine.compileLaTeX();
     if(allowRecovery&&result.status!==0&&needsCompilerRecovery(result.log)){document.querySelector("#healthText").textContent="Restarting compiler…";notify("Recovering the local pdfTeX engine");await restartCompiler();return runCompileSource(source,entryFile,false)}
     return{...result,missingFigures,missingSources,seconds:(performance.now()-started)/1000}
