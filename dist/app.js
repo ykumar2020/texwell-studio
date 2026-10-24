@@ -38,7 +38,7 @@ const files={
   "notes.tex":`% Private notes for this assignment\n% Try one change at a time, then compile.`
 };
 const editor=document.querySelector("#sourceEditor"),lines=document.querySelector("#lineNumbers"),saveState=document.querySelector("#saveState"),compileBtn=document.querySelector("#compileBtn"),compileMenu=document.querySelector("#compileMenu"),compileChoices=document.querySelector("#compileChoices"),compileHtmlBtn=document.querySelector("#compileHtmlBtn"),progress=document.querySelector("#compileProgress"),pdfView=document.querySelector("#pdfView"),htmlView=document.querySelector("#htmlView"),logView=document.querySelector("#logView"),pdfTab=document.querySelector("#pdfTab"),htmlTab=document.querySelector("#htmlTab"),logTab=document.querySelector("#logTab"),toast=document.querySelector("#toast");
-const compilerAssetVersion="20261023-article-core-3";
+const compilerAssetVersion="20261024-article-core-4";
 let activeFile="main.tex",mainFile="main.tex",zoom=92,saveTimer,rootIssue=null,pdfURL=null,lastPDF=null,optimizedPDF=null,optimizedURL=null,assetPreviewURL=null,siteZipURL=null,htmlOutput=null,projectDB=null,previewAssetURLs=[];
 let latexEngine=new PdfTeXEngine(),formatFileBytes=null,formatFilePromise=null,formatInstalledEngine=null,coreBundle=null,coreBundlePromise=null,coreInstalledEngine=null,libsBundle=null,libsBundlePromise=null,libsInstalledEngine=null;
 editor.value=files[activeFile];
